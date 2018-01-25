@@ -249,14 +249,23 @@ footer a.rule {
   color: white;
   border-bottom: 1px dashed; }
 
-#rules .modal-dialog {
-  color: black;
-  font-size: 16px;
-  width: 100%;
-  /* padding: 20px; */ }
+.modal-footer > button:hover {
+  box-shadow: none !important; }
 
+.modal-dialog,
 .modal-content {
-  padding: 30px !important; }
+  /* 80% of window height */
+  height: 95% !important; }
+
+.modal-body {
+  /* 100% = dialog height, 120px = header + footer */
+  max-height: 95%;
+  overflow-y: scroll;
+  padding: 20px;
+  color: #000000; }
+
+.modal .modal-dialog {
+  width: 85% !important; }
 
 @media screen and (max-width: 768px) {
   .bg-img, .main {
