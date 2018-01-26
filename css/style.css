@@ -21,23 +21,24 @@ h2 {
   padding-bottom: 60px; }
 
 h3 {
-  font-weight: 600;
-  font-size: 26px; }
+  font-size: 26px;
+  font-weight: 600; }
 
-input, textarea {
+input,
+textarea {
   outline: none; }
 
 p {
-  margin-top: 50px;
-  margin-bottom: 25px;
   font-size: 22px;
-  font-weight: normal; }
+  font-weight: normal;
+  margin-top: 50px;
+  margin-bottom: 25px; }
 
 /* Navigation bar */
 nav {
+  z-index: 1;
   width: 100%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.034), 0 3px 6px rgba(0, 0, 0, 0.096);
-  z-index: 1; }
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.034), 0 3px 6px rgba(0, 0, 0, 0.096); }
 
 .navbar-brand {
   padding-right: 15px; }
@@ -53,39 +54,39 @@ ul.first {
   letter-spacing: 3px; }
 
 .info a > .fa-whatsapp {
-  color: #42b942;
+  font-size: 1.2em;
   margin: 5px;
-  font-size: 1.2em; }
+  color: #42b942; }
 
 .info a > .fa-phone {
-  color: #1dbcec;
+  font-size: 1.2em;
   margin: 5px;
-  font-size: 1.2em; }
+  color: #1dbcec; }
 
 /*index.html*/
 .main {
-  /*    background: url(../img/main1.jpg) no-repeat center center / cover;*/
-  margin-top: 50px;
-  height: 500px;
-  width: 100%; }
-
-.bg-img {
   width: 100%;
   height: 500px;
+  /*    background: url(../img/main1.jpg) no-repeat center center / cover;*/
+  margin-top: 50px; }
+
+.bg-img {
   position: absolute;
   top: 56px;
-  left: 0; }
+  left: 0;
+  width: 100%;
+  height: 500px; }
 
 #inv_form {
-  background: #fff;
-  border-radius: 2px;
   display: block;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.034), 0 3px 6px rgba(0, 0, 0, 0.096);
-  color: #333;
+  width: 400px;
   margin: 0 auto;
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 400px; }
+  color: #333;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.034), 0 3px 6px rgba(0, 0, 0, 0.096); }
 
 #inv_form input:focus,
 #inv_form textarea:focus {
@@ -95,22 +96,22 @@ ul.first {
 #inv_form button,
 textarea {
   display: block;
+  width: 70%;
   margin: 20px auto;
-  padding: 15px;
-  width: 70%; }
+  padding: 15px; }
 
 .btn {
-  background: #fff;
-  color: #333;
-  text-decoration: none;
-  text-align: center;
+  margin: .5em 0;
   padding: 1em 2em;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
   border: 1px solid #666;
-  margin: .5em 0; }
+  background: #fff; }
 
 .btn:hover {
-  background: #eaeaea;
-  color: #333; }
+  color: #333;
+  background: #eaeaea; }
 
 .build .btn {
   margin: 20px; }
@@ -120,23 +121,23 @@ textarea {
   text-align: center; }
 
 .card-btn {
-  background: #fff;
-  border-radius: 2px;
   display: block;
+  width: 30%;
   margin: 20px auto;
   padding: 1em 2em;
   color: #333;
-  width: 30%;
+  border-radius: 2px;
+  background: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.034), 0 3px 6px rgba(0, 0, 0, 0.096); }
 
 .card {
-  background: #fff;
-  border-radius: 2px;
+  position: relative;
   display: block;
+  width: 100%;
   height: 420px;
   margin: 1rem auto;
-  position: relative;
-  width: 100%;
+  border-radius: 2px;
+  background: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.034), 0 3px 6px rgba(0, 0, 0, 0.096); }
 
 .img-build {
@@ -144,12 +145,12 @@ textarea {
   height: 40%; }
 
 .card h3 {
-  padding-top: 10px;
-  height: 20%; }
+  height: 20%;
+  padding-top: 10px; }
 
 .card p {
-  padding: 0;
-  margin: 10px; }
+  margin: 10px;
+  padding: 0; }
 
 .card a {
   text-decoration: underline;
@@ -161,77 +162,77 @@ textarea {
 
 /*build.html*/
 .base {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  text-align: center;
   background-image: url("../../img/base.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: top center;
-  padding-top: 50px;
-  padding-bottom: 100px;
-  text-align: center; }
+  background-size: cover; }
 
 .box {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  text-align: center;
   background-image: url("../../img/box.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center center;
-  padding-top: 50px;
-  padding-bottom: 100px;
-  text-align: center; }
+  background-size: cover; }
 
 .roof {
-  background-image: url("../../img/roof.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
   padding-top: 50px;
   padding-bottom: 100px;
-  text-align: center; }
+  text-align: center;
+  background-image: url("../../img/roof.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; }
 
 .ready {
-  background-image: url("../../img/ready.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
+  height: 700px;
   padding-top: 50px;
   padding-bottom: 50px;
-  height: 700px;
-  text-align: center; }
+  text-align: center;
+  background-image: url("../../img/ready.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; }
 
 /*price.html*/
 .catalog {
   background-color: #f5f5f5; }
 
 .card-line {
-  padding: 10px;
-  background: #fff;
-  border-radius: 2px;
+  position: relative;
   display: block;
+  width: 100%;
   height: 420px;
   margin: 1rem auto;
-  position: relative;
-  width: 100%;
+  padding: 10px;
+  border-radius: 2px;
+  background: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.034), 0 3px 6px rgba(0, 0, 0, 0.096); }
 
 .card-line h3 {
-  padding-top: 10px;
   height: 15%;
+  padding-top: 10px;
   text-align: center; }
 
 .card-line p {
-  padding: 0;
-  margin: 0; }
+  margin: 0;
+  padding: 0; }
 
 .card-line span {
-  display: block;
   font-size: 28px;
   font-weight: 700;
-  text-align: center;
-  margin: 10px; }
+  display: block;
+  margin: 10px;
+  text-align: center; }
 
 .card-line img {
   display: block;
-  height: 150px;
   width: 150px;
+  height: 150px;
   margin: 0 auto; }
 
 .card-line a {
@@ -240,10 +241,10 @@ textarea {
 
 /* Footer */
 footer {
-  background-color: #191919;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #fff; }
+  color: #fff;
+  background-color: #191919; }
 
 footer a.rule {
   color: white;
@@ -258,17 +259,18 @@ footer a.rule {
   height: 95% !important; }
 
 .modal-body {
+  overflow-y: scroll;
   /* 100% = dialog height, 120px = header + footer */
   max-height: 95%;
-  overflow-y: scroll;
   padding: 20px;
-  color: #000000; }
+  color: #000; }
 
 .modal .modal-dialog {
   width: 85% !important; }
 
 @media screen and (max-width: 768px) {
-  .bg-img, .main {
+  .bg-img,
+  .main {
     height: 750px; }
   #inv_form {
     width: 100% !important; }
@@ -281,9 +283,9 @@ footer a.rule {
 
 @media screen and (max-width: 480px) {
   #rules .modal-dialog {
-    color: black;
     font-size: 16px;
-    width: 100%; }
+    width: 100%;
+    color: black; }
   .modal-content {
     padding: 20px; }
   .modal-content p {
