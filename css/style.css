@@ -22,10 +22,7 @@ a {
 	text-decoration: none;
 }
 
-/*a:hover {
-	opacity: .8;
-}
-*/
+
 .header-pretitle {
 	margin-top: 102px;
 }
@@ -68,6 +65,28 @@ header small {
 
 
 /* секция портфолио */
+
+
+.developing {
+	opacity: .2;
+}
+
+.developing__text {
+	position: absolute;
+	top: 40%;
+	left: 3%;
+	font-weight: 900;
+	border: 3px solid red;
+
+	padding: 20px;
+	width: 80%;
+	font-size: 26px;
+	color: red;
+	text-align: center;
+
+}
+
+
 .portfolio {
 	background-color: #dddddd;
 	padding-top: 44px;
@@ -182,12 +201,22 @@ footer {
 
 /* Media */
 @media (max-width: 1200px) {
+
+	
+	.developing__text {
+		left: 5%;
+	}
+
 	.header-pretitle {
 		margin-top: 60px;
 	}
 }
 
 @media (max-width: 992px) {
+
+	.developing__text {
+		left: 3%;
+	}
 	.header-ing {
 		display: none;
 	}
@@ -215,6 +244,10 @@ footer {
 
 
 @media (max-width: 768px) {
+
+	.developing__text {
+		left: 9%;
+	}
 	.portfolio-col-1 {
 		margin-bottom: 40px;
 	}
