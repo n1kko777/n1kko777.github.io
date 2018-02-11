@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Notes App</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<nav>
+		<div class="container">
+				<div class="logo">Notes App</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<ul id="todo-list">
+			<li class="todo-item">
+				<input type="checkbox" class="checkbox">
+				<label class="title">Изучить JavaScript</label>
+				<input type="text" class="textfield">
+				<button class="edit">Изменить</button>
+				<button class="delete">Удалить</button>
+			</li>
+		</ul>
+
+
+	<form id="todo-form">
+		<input type="text" id="add-input">
+		<button id="add-button">Добавить</button>
+	</form>
+	</div>
+
+
+	<script src="js/app.js"></script>
+</body>
+</html>
