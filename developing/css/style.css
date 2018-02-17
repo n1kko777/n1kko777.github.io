@@ -197,7 +197,7 @@ section h1, h2, h3,
 .base {
   padding-top: 50px;
   padding-bottom: 100px;
-  background-image: url("../../img/base.jpg");
+  background-image: url("img/base.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -206,7 +206,7 @@ section h1, h2, h3,
 .box {
   padding-top: 50px;
   padding-bottom: 100px;
-  background-image: url("../../img/box.jpg");
+  background-image: url("img/box.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -215,7 +215,7 @@ section h1, h2, h3,
 .roof {
   padding-top: 50px;
   padding-bottom: 100px;
-  background-image: url("../../img/roof.jpg");
+  background-image: url("img/roof.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -229,7 +229,7 @@ section h1, h2, h3,
 .ready {
   padding-top: 50px;
   padding-bottom: 50px;
-  background-image: url("../../img/ready.jpg");
+  background-image: url("img/ready.jpg");
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
