@@ -65,7 +65,7 @@ ul.first {
 /*index.html*/
 .main {
   width: 100%;
-  background: url(../img/main1.jpg) no-repeat center center/cover;
+  background: url(img/main1.jpg) no-repeat center center/cover;
   padding-top: 80px;
   padding-bottom: 80px; }
 
