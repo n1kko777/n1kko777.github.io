@@ -34,6 +34,12 @@ p {
   margin-top: 50px;
   margin-bottom: 25px; }
 
+button {
+  cursor: pointer; }
+
+button:active, button:focus {
+  outline: none; }
+
 /* 
     Nav Start
  */
