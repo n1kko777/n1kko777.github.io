@@ -1,6 +1,3 @@
- 
-$("#dialog").hide(); //скрываем окно при загрузке страница
-
 $( document ).ready(function() {
 
     $(".phone").mask("0(000)-000-00-00");
@@ -21,7 +18,7 @@ $( document ).ready(function() {
 
     $(".design .pick > .object").on("click", function(){
         design = $(this).parent().find("span").text();
-        console.log(design);
+        // console.log(design);
         $(".design .object").each(function(i){
 
             $(".design .clicked").removeClass("clicked");
@@ -31,7 +28,7 @@ $( document ).ready(function() {
 
     $(".base .pick > .object").on("click", function(){
         base = $(this).parent().find("span").text();
-        console.log(base);
+        // console.log(base);
         $(".base .object").each(function(i){
 
             $(".base .clicked").removeClass("clicked");
@@ -41,7 +38,7 @@ $( document ).ready(function() {
 
     $(".box .pick > .object").on("click", function(){
         box = $(this).parent().find("span").text();
-        console.log(box);
+        // console.log(box);
         $(".box .object").each(function(i){
 
             $(".box .clicked").removeClass("clicked");
@@ -51,7 +48,7 @@ $( document ).ready(function() {
 
     $(".roof .pick > .object").on("click", function(){
         roof = $(this).parent().find("span").text();
-        console.log(roof);
+        // console.log(roof);
         $(".roof .object").each(function(i){
 
             $(".roof .clicked").removeClass("clicked");
@@ -65,7 +62,7 @@ $( document ).ready(function() {
 
     $(".facade .pick > .object").on("click", function(){
         facade = $(this).parent().find("span").text();
-        console.log(facade);
+        // console.log(facade);
         $(".facade .object").each(function(i){
 
             $(".facade .clicked").removeClass("clicked");
@@ -86,11 +83,41 @@ $( document ).ready(function() {
 
     /*Диалоговое окно*/
     $(".rule").on("click", function(){
+        $("body").addClass("blocked");
+        $("#dialog").removeClass("hide");
         $("#dialog").fadeIn(); //плавное появление блока
     });
 
     $(".close-dialog, #close, #dialog").on("click", function(){
+        $("body").removeClass("blocked");
         $("#dialog").fadeOut(); //плавное исчезание блока
+        $("#dialog").addClass("hide");
+    });
+
+        //E-mail Ajax Send
+    $("form.callorder").submit(function() { //Change
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: "mail.php", //Change
+            data: th.serialize()
+        }).done(function() {
+            
+            $(th).find(".success").addClass("active")
+                                .css("display", "flex")
+                                .hide()
+                                .fadeIn();
+
+            setTimeout(function() {
+                // Done Functions
+                $(th).find(".success").removeClass("active").fadeOut();
+                th.trigger("reset");
+            }, 3000);
+        }).fail(function() {
+            alert("Произошла ошибка! Повторите попытку или свяжитесь с нами. \n0(000)-000-00-00");
+            th.trigger("reset");   
+        });
+        return false;
     });
 
 });
