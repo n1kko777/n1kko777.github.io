@@ -27,7 +27,7 @@ $( document ).ready(function() {
     /*animations*/
     function goToAnimate(argument, speed) {
         $("html, body").animate({
-            scrollTop: $(argument).offset().top
+            scrollTop: $(argument).offset().top - $(".navbar").height()
         }, speed);
     }
     /* Скрытие меню и плавное перемещение по странице */
