@@ -484,8 +484,12 @@ section h1, h2, h3,
 .owl-carousel {
   position: relative; }
 
-.slide-item img {
-  height: 450px; }
+.p-0 {
+  padding: 0 !important; }
+
+.slide-img {
+  width: 100%;
+  height: 250px; }
 
 .slide-item h5 {
   font-weight: 700; }

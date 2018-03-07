@@ -6,9 +6,11 @@ $( document ).ready(function() {
     $(".owl-carousel").owlCarousel({
         loop: true,
         items: 1,
+        center:true,
+        margin: 20,
         pagination : true,
         autoplay: true,
-        autoplayTimeout: 4000,
+        autoplayTimeout: 5000,
         autoplayHoverPause: true,
         animateOut: 'fadeOut'
     });
