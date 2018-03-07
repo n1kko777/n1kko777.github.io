@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Дом для себя.рф - Главная</title>
+    <title>Дом для себя.рф</title>
     <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico"/>
     <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png"/>
     <link rel="apple-touch-icon" href="img/favicon/apple-icon.png"/>
@@ -19,10 +19,10 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav first">
-            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-            <li class="nav-item"><a class="nav-link" href="build.html">Строительство дома</a></li>
-            <li class="nav-item"><a class="nav-link" href="price.html">Стоимость</a></li>
-            <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            <li class="nav-item"><span class="nav-link">Главная</span></li>
+            <li class="nav-item"><span class="nav-link">Портфолио</span></li>
+            <li class="nav-item"><span class="nav-link">Строительство дома</span></li>
+            <li class="nav-item"><span class="nav-link">Контакты</span></li>
           </ul>
           <ul class="navbar-nav ml-auto second">
             <li class="nav-item">
@@ -32,12 +32,13 @@
         </div>
       </nav>
     </section>
-    <section class="main">
+    <div class="scrollcall"><a href="tel:7(000)000-00-00"><i class="fa fa-phone"></i></a></div>
+    <section class="main" id="index">
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-6">
             <h1> Дом для себя.рф - строительство дома под ключ</h1>
-            <p class="enter-text"> Возведение дома с нуля до внутренней отделке помещения под чутким контролем. Заполните заявку и получите <strong>персональное предложение!!!</strong></p>
+            <p class="enter-text"> Возведение дома с нуля до внутренней отделке помещения под чутким контролем специалиста. </p>
           </div>
           <div class="col-12 col-md-6">
             <form class="callorder" id="inv_form">
@@ -46,11 +47,42 @@
               <input type="hidden" name="project_name" value="Дом для себя.рф"/>
               <input type="hidden" name="admin_email" value="3734489@gmail.com"/>
               <input type="hidden" name="form_subject" value="Заявка с сайта Дом для себя.рф"/>
+              <p class="inv_title">Заполните заявку и получите <strong>персональное предложение!!!</strong></p>
               <input type="text" name="inv_name" placeholder="Как к вам обращаться?" required="required"/>
               <input class="phone" type="tel" name="inv_phone" placeholder="Ваш номер телефона" required="required"/>
-              <input class="email" type="email" name="inv_email" placeholder="Ваш Email"/>
               <button class="mbtn" id="sub_inv">Отправить</button>
             </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <h2>Портфолио</h2>
+        <div class="owl-carousel">
+          <div class="slide-item"><img src="img/base1.jpg" alt=""/>
+            <h5>Заголовок</h5>
+            <p>Текст</p>
+          </div>
+          <div class="slide-item"><img src="img/box1.jpg" alt=""/>
+            <h5>Заголовок</h5>
+            <p>Текст</p>
+          </div>
+          <div class="slide-item"><img src="img/roof1.jpg" alt=""/>
+            <h5>Заголовок</h5>
+            <p>Текст</p>
+          </div>
+          <div class="slide-item"><img src="img/design1.jpg" alt=""/>
+            <h5>Заголовок</h5>
+            <p>Текст</p>
+          </div>
+          <div class="slide-item"><img src="img/ready1.jpg" alt=""/>
+            <h5>Заголовок</h5>
+            <p>Текст</p>
+          </div>
+          <div class="slide-item"><img src="img/main1.jpg" alt=""/>
+            <h5>Заголовок</h5>
+            <p>Текст		</p>
           </div>
         </div>
       </div>
@@ -70,7 +102,7 @@
                   <li>ленточный фундамент</li>
                   <li>монолитная плита</li>
                 </ul>
-              </div><a href="build.html">Подробнее</a>
+              </div><a href="#build">Подробнее</a>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-lg-3">
@@ -82,7 +114,7 @@
                   <li>газобетонный блок</li>
                   <li>монолитные стены</li>
                 </ul>
-              </div><a href="build.html">Подробнее</a>
+              </div><a href="#build">Подробнее</a>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-lg-3">
@@ -94,7 +126,7 @@
                   <li>металлочерепица</li>
                   <li>Ондулин</li>
                 </ul>
-              </div><a href="build.html">Подробнее</a>
+              </div><a href="#build">Подробнее</a>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-lg-3">
@@ -106,10 +138,188 @@
                   <li>декоративная штукатурка</li>
                   <li>сайдинг</li>
                 </ul>
-              </div><a href="build.html">Подробнее</a>
+              </div><a href="#build">Подробнее</a>
             </div>
           </div>
-          <button class="card-btn">Рассчитать стоимость дома</button>
+        </div>
+      </div>
+    </section>
+    <section class="prepare" id="build">
+      <div class="container">
+        <h2>Подготоительные работы</h2>
+        <p class="main-text">Подготовительные работы включают в себя: подвод электричества на участок от рядом стоящего столба, обустройства временного жилья для рабочих, бурение скважины под воду, разметка на участке места строительства вашего дома, а также выравнивания участка и сверления отверстийй под заливку свай.</p>
+        <div class="mbtn-test">
+          <button class="mbtn">Построить дом своей мечты</button>
+        </div>
+      </div>
+    </section>
+    <section class="base" id="base">
+      <div class="container">
+        <h2>Фундамент</h2>
+        <p class="main-text"> Для того чтобы приступить к возведению фундамента, необходимо определить расположения трубы с водой, канализационной трубы, а также силового кабеля, если эти моменты не предусмотреть заранее, то потом придется понести большие затраты. Существуют следующие разновидности фундамента:</p>
+        <div class="options">
+          <ul>
+            <li> <strong>Свайно-ростверковый фундамент </strong>— применяется на грунтах с достаточно хорошей несущей способностью (скальные, с низким уровнем грунтовых вод, песочные грунты, сухая глина);</li>
+            <li> <strong>Ленточный фундамент </strong>— применяется для тяжелых каменных домов, бывают монолитные из жезезобетона или сборные из блоков ФБС;</li>
+            <li> <strong>Монолитная плита </strong>— применяется на слабо несущих грунтах с высоким уровнем грунтовых вод.</li>
+          </ul>
+        </div>
+        <div class="hide">
+          <h3>Выберите Ваш вариант</h3>
+          <div class="row">
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/srf.png" alt="Свайно-ростверковый фундамент"/></div><span>Свайно-ростверковый фундамент</span>
+              </div>
+            </div>
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/lf.png" alt="Ленточный фундамент"/></div><span>Ленточный фундамент</span>
+              </div>
+            </div>
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/mf.png" alt="Монолитная плита"/></div><span>Монолитная плита</span>
+              </div>
+            </div>
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/mine.png" alt="Другое"/></div><span>Другое</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="box" id="box">
+      <div class="container">
+        <h2>Коробка</h2>
+        <p class="main-text">Одним из главных вопросов при строительстве дома является материал возведеня коробки дома. Стены дома могут быть возведены из следующих материалов: керамический блок-кирпич, газобетонный блок, монолитные стены. </p>
+        <p>Дом из <strong>керамичекого блока-кирпича </strong>может простоять до 100 лет и более, он хорошо переживает дождь, снег, морозы и засуху. Технология возведения стен отработана до совершенства из-за увеливается качество установки.</p>
+        <p> <strong>Газобетон </strong>используется на протяжении 20 лет и благодаря теплу, легкости и удобству в работе, этот материал не нуждается в дополнительном утеплении, имеет долгий срок службы и является абсолютно экологичным.</p>
+        <p><strong>Монолитные стены </strong>из железобетона устанавливают в сейсмических зонах, где применяется сложные архитектурные решения. Это очень долговечный материал для стен, но он наиболее затратный и нуждается в утеплении. </p>
+        <div class="hide">
+          <h3>Выберите Ваш вариант</h3>
+          <div class="row">
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/ker.png" alt="Керамический блок-кирпич"/></div><span>Керамический блок-кирпич</span>
+              </div>
+            </div>
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/gaz.png" alt="Газобетонный блок"/></div><span>Газобетонный блок</span>
+              </div>
+            </div>
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/mon.png" alt="Монолитные стены"/></div><span>Монолитные стены</span>
+              </div>
+            </div>
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/mine.png" alt="Другое"/></div><span>Другое</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="roof" id="roof">
+      <div class="container">
+        <h2>Крыша</h2>
+        <p class="main-text">Крыша вашего дома имеет большое значение, как архитектурное — должна гармонировать с вашим домом в целом, так и быть надежной: защищать от дождя и снега, ветра и холода. Существуют много видов крыш для чистой постройки дома, но мы поговорим о более распространенных: мягкая кровля, металлочерепица, ондулин.</p>
+        <p> <strong>Мягкая черепица </strong>состоит из специальных частей, которые по очередно укладываются на приготовленное основание. Кровля состоит из стеклохолста пропитанного батуном, а сверху наносится каменная крошка, которая защищает мягкую кровлю от ультрафиолета, а также придает цвет и фактуру поверхности. Большой выбор цвета и дизайна, а также хорошая звукоизоляция.</p>
+        <p> <strong>Металлочерепица </strong>изготавливается из стального оцинкованного листа, на который наносится полимерный слой и лак. Такая кровля достойно смотриться на вашей крыше, и долгое время сохраняет свой первозданный вид. Легко монтируется, имеет небольшой вес и приемлемую цену.</p>
+        <p><strong>Ондулин </strong>— это тот же шифер, однако несколько улучшенный. Изготовитель произвел многообразную цветную гамму, возможно подобрать тон ондулина на свой вкус и цвет. Так как Ондулин никак не включает асбеста в составе, возможно отнести его к экологично безвредным кровельным покрытиям.</p>
+        <div class="hide">
+          <h3>Выберите Ваш вариант</h3>
+          <div class="row">
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/mch.png" alt="Мягкая черепица"/></div><span>Мягкая черепица</span>
+              </div>
+            </div>
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/met.png" alt="Металлочерепица"/></div><span>Металлочерепица</span>
+              </div>
+            </div>
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/odu.png" alt="Ондулин"/></div><span>Ондулин</span>
+              </div>
+            </div>
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/mine.png" alt="Другое"/></div><span>Другое</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="facade" id="facade">
+      <div class="container">
+        <h2>Фасад</h2>
+        <p class="main-text">Фасад — это лицо вашего дома и потому, как оно выглядит, можно составить первое впечатление о хозяине дома. Фасад несет декоративную функцию, а также защищает ваше строение от внешних природных факторов. Наиболее популярными материалами являются кирпичный фасад, декоративная штукатурка, сайдинг.</p>
+        <p><strong>Кирпичный фасад дома </strong>устойчив к изменению погоды и к механическим воздействиям, всегда будет в тренде, представляет большой выбор облицовачного кирпича и дает озможность применить любой задуманный дизайн дома.</p>
+        <p>С помощью <strong>декоративной штукатурки  </strong>можно придать фасаду дома индивидуальный рисунок, фигуру и неповторимый цвет. Относиться к недорогому способу облицовки дома. </p>
+        <p> <strong>Сайдинг </strong>регулярно применяется в отделке дома, считается наиболее недорогим материалом, который прост в установке.</p>
+        <div class="hide">
+          <h3>Выберите Ваш вариант</h3>
+          <div class="row">
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/kirp.png" alt="Кирпичный фасад дома"/></div><span>Кирпичный фасад дома</span>
+              </div>
+            </div>
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/decsht.jpg" alt="Декоративная штукатурка"/></div><span>Декоративная штукатурка</span>
+              </div>
+            </div>
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/sajding.png" alt="Сайдинг"/></div><span>Сайдинг</span>
+              </div>
+            </div>
+            <div class="col-sm-3 col-6">
+              <div class="pick">
+                <div class="object"><img src="img/options/mine.png" alt="Другое"/></div><span>Другое</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="ready" id="ready">
+      <div class="container">
+        <h2>Остались вопросы?</h2>
+        <form class="makeorder" id="inv_form">
+          <div class="success"><span>
+               Спасибо за заявку!<br/>Мы скоро с вами свяжемся.</span></div>
+          <input type="hidden" name="project_name" value="Дом для себя.рф"/>
+          <input type="hidden" name="admin_email" value="3734489@gmail.com"/>
+          <input type="hidden" name="form_subject" value="Заявка с сайта Дом для себя.рф"/>
+          <input type="text" name="inv_name" placeholder="Как к вам обращаться?" required="required"/>
+          <input class="phone" type="tel" name="inv_phone" placeholder="Ваш номер телефона" required="required"/>
+          <input class="email" type="email" name="inv_email" placeholder="Ваш Email"/>
+          <textarea placeholder="Ваш вопрос"></textarea>
+          <button class="mbtn" id="sub_inv">Отправить</button>
+        </form>
+      </div>
+    </section>
+    <section class="info-block" id="contacts">
+      <div class="container">
+        <div class="photo-block"><img src="img/placeholder.png" alt="self-photo"/></div>
+        <div class="title-block">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, modi?</p>
+        </div>
+        <div class="text-block">
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore minima commodi neque a non voluptatibus, quod sit dolorem. Debitis iusto, accusamus quisquam. Odit ipsum quos eum aliquid deleniti adipisci consequatur?</p>
+          <p class="social-info">
+             <em>Аддрес электронной почты — </em> <a href="mailto:3734489@gmail.com">example@gmail.com</a><br/><em>Номер телефона — </em> <a href="tel:+1234567890">+7(000)000-00-00</a></p>
         </div>
       </div>
     </section>
@@ -162,6 +372,7 @@
     <script src="js/jquery.mask.js"></script>
     <script src="js/tether.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
