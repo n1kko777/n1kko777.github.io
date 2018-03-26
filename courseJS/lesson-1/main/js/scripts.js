@@ -1,19 +1,16 @@
-let budget = prompt('Ваш бюджет?');
-let shopName = prompt('Название вашего магазина?');
-let shopGoods = [];
-let employers = {};
-let open = false;
-
-for (var i = 0; i < 3; i++) {
-	shopGoods[i] = prompt('Какой тип товаров будем продавать?');
-}
+let youMoney = prompt('Ваш бюджет?', '');
+let namePrice = prompt('Название вашего магазина?', '');
 
 let mainList = {
-	"Ваш бюджет": budget,
-	"Имя магазина": shopName,
-	"Массив товаров": shopGoods,
-	"Сотрудники": employers,
-	isOpen: open
+	money: youMoney,
+	price: namePrice,
+	shopGoods: [],
+	employers: {},
+	open: false
 };
+for (var i = 0; i < 3; i++) {
+	mainList.shopGoods[i] = prompt('Какой тип товаров будем продавать?', '');
+}
 
+console.log(mainList);
 alert('Ваш бюджет на день равен ' + mainList["Ваш бюджет"]/30);
