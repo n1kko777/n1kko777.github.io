@@ -13,4 +13,4 @@ for (var i = 0; i < 3; i++) {
 }
 
 console.log(mainList);
-alert('Ваш бюджет на день равен ' + mainList["Ваш бюджет"]/30);
+alert('Ваш бюджет на день равен ' + mainList.money/30);
