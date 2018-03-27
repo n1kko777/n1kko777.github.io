@@ -1,9 +1,9 @@
-let youMoney = prompt('Ваш бюджет?', '');
-let namePrice = prompt('Название вашего магазина?', '');
+let budget = prompt('Ваш бюджет?', '');
+let shopName = prompt('Название вашего магазина?', '');
 
 let mainList = {
-	money: youMoney,
-	price: namePrice,
+	money: budget,
+	shop: shopName,
 	shopGoods: [],
 	employers: {},
 	open: false
