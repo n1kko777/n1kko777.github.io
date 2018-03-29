@@ -9,7 +9,6 @@ function count() {
 			arr[i][j] = Math.floor(Math.random() * 11);
 			sum = sum + arr[i][j];
 		} 
-		// arr[i] = Math.floor(Math.random() * 11);
 	}
 
 	console.log(arr);

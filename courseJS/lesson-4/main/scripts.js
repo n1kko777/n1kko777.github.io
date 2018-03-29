@@ -15,7 +15,7 @@ function start() {
     time = 21;
 }
 
-// start();
+start();
 
 let mainList = {
     budget: money,
