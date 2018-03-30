@@ -1,6 +1,7 @@
 let menu = document.querySelector('.menu');
 let menuItem = document.querySelectorAll('.menu-item');
 
+menu.replaceChild(menuItem[1], menuItem[2]);
 menu.insertBefore(menuItem[2], menuItem[1]);
 
 
