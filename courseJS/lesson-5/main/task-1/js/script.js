@@ -1,7 +1,8 @@
-let menu = document.querySelectorAll('.menu-item');
+let menu = document.querySelector('.menu');
+let menuItem = document.querySelectorAll('.menu-item');
 
-menu[1].innerText = 'Второй пункт';
-menu[2].innerText = 'Третий пункт';
+menu.insertBefore(menuItem[2], menuItem[1]);
+
 
 let newLi = document.createElement("LI");                
 newLi.innerHTML = "Пятый пункт";   
