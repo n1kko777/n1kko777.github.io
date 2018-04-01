@@ -36,7 +36,7 @@ function getSum(arr) {
 let start = prompt('Введите начальное значение', '');
 let end = prompt('Введите конечное значение', '');
 console.log();
-// && start === parseInt(start, 10) && end === parseInt(end, 10)
+
 let res = [];
 if ( !isNaN( start ) && !isNaN( end ) && start < end && start > 0 && end > 0 ) {
 
@@ -45,7 +45,7 @@ if ( !isNaN( start ) && !isNaN( end ) && start < end && start > 0 && end > 0 ) {
 			
 			if ( getFriendlyNumbers(i, j) ) {
 				if (i != j && j > i ) {
-					res.push([i, j]);
+					res.push( '[' + [i, j] + ']' );
 				}
 			}
 
@@ -56,4 +56,4 @@ if ( !isNaN( start ) && !isNaN( end ) && start < end && start > 0 && end > 0 ) {
 	res.push(false);
 }
 
-alert( res );
+alert( '[' + res + ']' );
