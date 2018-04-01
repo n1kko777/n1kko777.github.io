@@ -35,7 +35,6 @@ function getSum(arr) {
 
 let start = prompt('Введите начальное значение', '');
 let end = prompt('Введите конечное значение', '');
-console.log();
 
 let res = [];
 if ( !isNaN( start ) && !isNaN( end ) && start < end && start > 0 && end > 0 ) {
