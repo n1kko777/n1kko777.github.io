@@ -14,15 +14,8 @@ let openBtn = document.getElementById('open-btn'),
 		 btns = document.getElementsByTagName('button'),
 		 goods_btn = btns[1],
 		 budget_btn = btns[2],
-		 employers_btn = btns[3];
-
-let enterItems = document.querySelector('#items');
-
-let enterTime = document.querySelector('#time');
-
-let enterBudget = document.querySelector('#budget');
-
-let hireEmployers = document.querySelectorAll('.hire-employers-item');
+		 employers_btn = btns[3],
+		 hireEmployers = document.querySelectorAll('.hire-employers-item');
 
 let money,
     price;
