@@ -126,49 +126,31 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	/*Прокрутка до элемента*/
 
-	let step = 0,
-			stepSwitch,
-			stepTo,
-			time,
-			menu = document.getElementsByTagName('nav')[0],
-			navTab = document.getElementsByTagName('a');
+	function animate(draw, duration) {
+	    let start = performance.now(); //возвращаем временную метку
+	   requestAnimationFrame(function animate(time) {
+	   // при помощи requestAnimationFrame мы занимаемся анимацией
+	       let timePassed = time - start;
+	       if (timePassed > duration) {
+	           timePassed = duration;
+	       }
+	       draw(timePassed);
+	       if (timePassed < duration) {
+	           requestAnimationFrame(animate);
+	       }
+	   })
+	};
+	let menu = document.getElementsByTagName('nav')[0];
+	menu.addEventListener('click', function(event) {
+	   event.preventDefault();
+	   animate(function(timePassed) {
+	       let target = event.target;
+	     if (target.tagName = 'li') {
+	       let section = document.getElementById(target.getAttribute('href').slice(1));
+	         window.scrollBy(0, section.getBoundingClientRect().top / 20);
+	     }  
+	   }, 1500)
+	   
+	})
 
-	function scrollToID(id) {
-		let pos = document.querySelector(id);
-				stepTo = pos.offsetTop - menu.offsetHeight,
-				step = document.documentElement.scrollTop;
-	}
-
-	function stepGO() {
-		if ( step < stepTo ) {
-			step += 1;
-
-			window.scrollTo(0, step);
-			stepSwitch = requestAnimationFrame(stepGO);
-
-		} else if ( step > stepTo ) {
-			step -= 1;
-
-			window.scrollTo(0, step);
-			stepSwitch = requestAnimationFrame(stepGO);
-			
-		} else if ( step == stepTo ) {
-		    cancelAnimationFrame(stepSwitch);
-				clearInterval(time);
-		}
-	}
-
-	for (let i = 0; i < navTab.length; i++) {
-		navTab[i].addEventListener('click', (event) => {
-				event.preventDefault();
-				if ( event.target ) {
-					scrollToID(event.target.getAttribute("href"));
-					time = setInterval(function() {
-					  requestAnimationFrame(stepGO);
-					}, 100);
-					
-				}
-			});
-	}
-
-});
+	});
