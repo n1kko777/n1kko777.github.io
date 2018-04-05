@@ -167,7 +167,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	more.addEventListener('click', function() {
 		this.classList.add('more-splash');
-		overlay.classList.toggle('rollOut');
+		// overlay.classList.toggle('rollOut');
 		overlay.style.display = 'block';
 		document.body.style.overflow = 'hidden';
 	});
@@ -182,10 +182,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	close.addEventListener('click', function() {
 		more.classList.remove('more-splash');
-		overlay.classList.toggle('rollOut');
+		overlay.style.transition = 'all 0.9s';
+		overlay.style.opacity = '0';
+		// overlay.classList.toggle('rollOut');
 		setTimeout(() => {
 			overlay.style.display = 'none';
-		}, 1300);
+		}, 1000);
 		document.body.style.overflow = '';
 	});
 	
