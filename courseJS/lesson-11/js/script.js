@@ -33,42 +33,6 @@ window.addEventListener('DOMContentLoaded', function () {
 		}
 	});	
 
-	
-/*УСЛОЖНЕННОЕ ЗАДАНИЕ
-	let floatBtn = document.createElement('BUTTON');
-	floatBtn.textContent = 'Запустить анимацию';
-	floatBtn.style.width = '200px';
-	floatBtn.style.height = '50px';
-	floatBtn.style.borderRadius = '50px';
-	floatBtn.style.borderColor = 'white';
-	floatBtn.style.background = 'white';
-	floatBtn.style.position = 'absolute';
-	floatBtn.style.top = '50%';
-	floatBtn.style.left = '50%';
-	floatBtn.style.transform = 'translateX(-50%)';
-	floatBtn.style.cursor = 'pointer';
-	document.querySelector('.main').appendChild(floatBtn);
-
-	let degFB = 0;
-	let rotateSwitch;
-	function rotateFB() {
-		degFB += 1;
-		floatBtn.style.transform = 'translateX(-50%) rotate('+ degFB + 'deg)';
-
-		rotateSwitch = requestAnimationFrame(rotateFB);
-	}
-
-	floatBtn.addEventListener('mousedown', () => {
-		floatBtn.textContent = 'Остановить анимацию';
-		requestAnimationFrame(rotateFB);
-	});
-
-	floatBtn.addEventListener('mouseup', () => {
-		floatBtn.textContent = 'Запустить анимацию';
-		cancelAnimationFrame(rotateSwitch);
-	});*/
-
-
 	/*Урок 8 + УСЛОЖНЕННОЕ ЗАДАНИЕ*/
 	// Таймер
 
@@ -138,8 +102,8 @@ window.addEventListener('DOMContentLoaded', function () {
 	       if (timePassed < duration) {
 	           requestAnimationFrame(animate);
 	       }
-	   })
-	};
+	   });
+	}
 	let menu = document.getElementsByTagName('nav')[0];
 	menu.addEventListener('click', (event) => {
 	   event.preventDefault();
@@ -149,7 +113,7 @@ window.addEventListener('DOMContentLoaded', function () {
 	       let section = document.getElementById(target.getAttribute('href').slice(1));
 	       window.scrollBy(0, section.getBoundingClientRect().top / 20);
 	     }  
-	   }, 1500)
+	   }, 1500);
 	   
 	});
 
@@ -184,5 +148,93 @@ window.addEventListener('DOMContentLoaded', function () {
 			overlay.style.display = 'none';
 		document.body.style.overflow = '';
 	});
+
+	/*Урок 11*/
+
+	let message = new Object();
+	message.loading = 'Загрузка...';
+	message.success = 'Спасибо! Скоро мы с вами свяжемся.';
+	message.failure = 'Что-то пошло не так...';
+
+	let form = document.getElementsByClassName('main-form')[0],
+			input = form.getElementsByTagName('input'),
+			statusMessage = document.createElement('div'),
+			statusImage = document.createElement('img');
+
+			statusImage.style.height = '30px';
+
+			form.addEventListener('submit', function (event) {
+				event.preventDefault();
+				form.appendChild(statusMessage);
+
+				// Ajax
+				/*1) Слздаем объект запроса*/
+				let request = new XMLHttpRequest();
+
+				/*2) Настройка запроса*/
+				request.open("POST", 'server.php');
+				/*Указываем кодировку данных*/
+				request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				/*Подготавливаем данные для отправки*/
+				let formData = new FormData(form);
+
+				/*3) Отправка запроса*/
+				request.send(formData);
+
+				/*Отслеживание статуса запроса*/
+				request.onreadystatechange = function () {
+					if (request.readyState < 4) {
+						statusImage.src = 'icons/ajax-loader.gif';
+						statusMessage.appendChild(statusImage);
+						/*statusMessage.innerHTML = message.loading;*/
+					}	else if (request.readyState === 4) {
+						if (request.status == 200 && request.status < 300 ) {
+						statusImage.src = 'icons/checked.png';
+						statusMessage.appendChild(statusImage);
+							statusMessage.innerHTML = message.success;
+							/*Добавляем контент на страницу*/
+						} else {
+						statusImage.src = 'icons/error.png';
+						statusMessage.appendChild(statusImage);
+							statusMessage.innerHTML = message.failure;
+						}
+					}
+				}
+
+				for (let i = 0; i < input.length; i++) {
+					input[i].value = '';
+					/*Очищаем поля ввода*/
+				}
+
+			});
+
+			let contactForm = document.getElementById('form'),
+					contactInput = contactForm.getElementsByTagName('input');
+
+					contactForm.addEventListener('submit', function (event) {
+						event.preventDefault();
+						contactForm.appendChild(statusMessage);
+						let request = new XMLHttpRequest();
+						request.open("POST", 'server.php');
+						request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+						let formData = new FormData(contactForm);
+						request.onreadystatechange = function () {
+							if (request.readyState < 4) {
+								statusMessage.innerHTML = message.loading;
+							}	else if (request.readyState === 4) {
+								if (request.status == 200 && request.status < 300 ) {
+									statusMessage.innerHTML = message.success;
+								} else {
+									statusMessage.innerHTML = message.failure;
+								}
+							}
+						}
+
+						for (let i = 0; i < contactInput.length; i++) {
+							contactInput[i].value = '';
+						}
+
+					});
+
 	
 });
