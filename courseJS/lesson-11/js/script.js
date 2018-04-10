@@ -159,8 +159,9 @@ window.addEventListener('DOMContentLoaded', function () {
 	let form = document.getElementsByClassName('main-form')[0],
 			input = form.getElementsByTagName('input'),
 			statusMessage = document.createElement('div'),
-			statusImage = document.createElement('img');
+			statusImage = document.createElement('div');
 
+			statusImage.style.display = 'inline-block';
 			statusImage.style.height = '30px';
 
 			form.addEventListener('submit', function (event) {
@@ -184,17 +185,17 @@ window.addEventListener('DOMContentLoaded', function () {
 				/*Отслеживание статуса запроса*/
 				request.onreadystatechange = function () {
 					if (request.readyState < 4) {
-						statusImage.src = '../icons/ajax-loader.gif';
+						statusImage.style.backgroundImage = '../icons/ajax-loader.gif';
 						statusMessage.appendChild(statusImage);
 						/*statusMessage.innerHTML = message.loading;*/
 					}	else if (request.readyState === 4) {
 						if (request.status == 200 && request.status < 300 ) {
-						statusImage.src = '../icons/checked.png';
+						statusImage.style.backgroundImage = '../icons/checked.png';
 						statusMessage.appendChild(statusImage);
 							statusMessage.innerHTML = message.success;
 							/*Добавляем контент на страницу*/
 						} else {
-						statusImage.src = '../icons/error.png';
+						statusImage.style.backgroundImage = '../icons/error.png';
 						statusMessage.appendChild(statusImage);
 							statusMessage.innerHTML = message.failure;
 						}
