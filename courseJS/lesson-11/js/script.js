@@ -182,13 +182,13 @@ window.addEventListener('DOMContentLoaded', function() {
         /*Отслеживание статуса запроса*/
         request.onreadystatechange = function() {
             if (request.readyState < 4) {
-                statusMessage.innerHTML = message.loading;
+                statusMessage.innerHTML = '<img src="icons/ajax-loader.gif">' + message.loading;
             } else if (request.readyState === 4) {
                 if (request.status == 200 && request.status < 300) {
-                    statusMessage.innerHTML = message.success;
+                    statusMessage.innerHTML = '<img src="icons/checked.png">' + message.success;
                     /*Добавляем контент на страницу*/
                 } else {
-                    statusMessage.innerHTML = '<img src="icons/error.png">' +  message.failure;
+                    statusMessage.innerHTML = '<img src="icons/error.png">' + message.failure;
                 }
             }
         }
@@ -213,12 +213,13 @@ window.addEventListener('DOMContentLoaded', function() {
         request.send(formData);
         request.onreadystatechange = function() {
             if (request.readyState < 4) {
-                statusMessage.innerHTML = message.loading;
+                statusMessage.innerHTML = '<img src="icons/ajax-loader.gif">' + message.loading;
             } else if (request.readyState === 4) {
                 if (request.status == 200 && request.status < 300) {
-                    statusMessage.innerHTML = message.success;
+                    statusMessage.innerHTML = '<img src="icons/checked.png">' + message.success;
+                    /*Добавляем контент на страницу*/
                 } else {
-                    statusMessage.innerHTML = message.failure;
+                    statusMessage.innerHTML = '<img src="icons/error.png">' + message.failure;
                 }
             }
         }
