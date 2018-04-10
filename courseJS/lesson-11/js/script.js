@@ -158,11 +158,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 	let form = document.getElementsByClassName('main-form')[0],
 			input = form.getElementsByTagName('input'),
-			statusMessage = document.createElement('div'),
-			statusImage = document.createElement('div');
-
-			statusImage.style.display = 'inline-block';
-			statusImage.style.height = '30px';
+			statusMessage = document.createElement('div');
 
 			form.addEventListener('submit', function (event) {
 				event.preventDefault();
@@ -186,17 +182,14 @@ window.addEventListener('DOMContentLoaded', function () {
 				request.onreadystatechange = function () {
 					if (request.readyState < 4) {
 						statusImage.style.backgroundImage = '../icons/ajax-loader.gif';
-						statusMessage.appendChild(statusImage);
-						/*statusMessage.innerHTML = message.loading;*/
+						statusMessage.innerHTML = message.loading;
 					}	else if (request.readyState === 4) {
 						if (request.status == 200 && request.status < 300 ) {
 						statusImage.style.backgroundImage = '../icons/checked.png';
-						statusMessage.appendChild(statusImage);
 							statusMessage.innerHTML = message.success;
 							/*Добавляем контент на страницу*/
 						} else {
 						statusImage.style.backgroundImage = '../icons/error.png';
-						statusMessage.appendChild(statusImage);
 							statusMessage.innerHTML = message.failure;
 						}
 					}
@@ -219,6 +212,8 @@ window.addEventListener('DOMContentLoaded', function () {
 						request.open("POST", 'server.php');
 						request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 						let formData = new FormData(contactForm);
+
+						request.send(formData);
 						request.onreadystatechange = function () {
 							if (request.readyState < 4) {
 								statusMessage.innerHTML = message.loading;
