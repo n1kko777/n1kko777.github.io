@@ -159,6 +159,8 @@ window.addEventListener('DOMContentLoaded', function() {
         input = form.getElementsByTagName('input'),
         statusMessage = document.createElement('div');
 
+        statusMessage.style.color = 'white';
+
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         form.appendChild(statusMessage);
@@ -186,7 +188,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     statusMessage.innerHTML = message.success;
                     /*Добавляем контент на страницу*/
                 } else {
-                    statusMessage.innerHTML = message.failure;
+                    statusMessage.innerHTML = '<img src="icons/error.png">' +  message.failure;
                 }
             }
         }
