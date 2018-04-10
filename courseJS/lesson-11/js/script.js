@@ -184,17 +184,17 @@ window.addEventListener('DOMContentLoaded', function () {
 				/*Отслеживание статуса запроса*/
 				request.onreadystatechange = function () {
 					if (request.readyState < 4) {
-						statusImage.src = 'icons/ajax-loader.gif';
+						statusImage.src = '../icons/ajax-loader.gif';
 						statusMessage.appendChild(statusImage);
 						/*statusMessage.innerHTML = message.loading;*/
 					}	else if (request.readyState === 4) {
 						if (request.status == 200 && request.status < 300 ) {
-						statusImage.src = 'icons/checked.png';
+						statusImage.src = '../icons/checked.png';
 						statusMessage.appendChild(statusImage);
 							statusMessage.innerHTML = message.success;
 							/*Добавляем контент на страницу*/
 						} else {
-						statusImage.src = 'icons/error.png';
+						statusImage.src = '../icons/error.png';
 						statusMessage.appendChild(statusImage);
 							statusMessage.innerHTML = message.failure;
 						}
