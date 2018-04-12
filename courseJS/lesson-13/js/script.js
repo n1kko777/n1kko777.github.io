@@ -191,7 +191,7 @@ window.addEventListener('DOMContentLoaded', function() {
                     statusMessage.innerHTML = '<img src="icons/error.png">' + message.failure;
                 }
             }
-        }
+        };
 
         for (let i = 0; i < input.length; i++) {
             input[i].value = '';
@@ -222,13 +222,155 @@ window.addEventListener('DOMContentLoaded', function() {
                     statusMessage.innerHTML = '<img src="icons/error.png">' + message.failure;
                 }
             }
-        }
+        };
 
         for (let i = 0; i < contactInput.length; i++) {
             contactInput[i].value = '';
         }
 
     });
+
+    /*Урок 13 + Усложненное задание*/
+    let sliderIndex = 1,
+        slides = document.getElementsByClassName('slider-item'),
+        prev = document.querySelector('.prev'),
+        next = document.querySelector('.next'),
+        dotsWrap = document.querySelector('.slider-dots'),
+        dot = document.getElementsByClassName('dot');
+
+        showSlides(sliderIndex);
+
+        function showSlides(n) {
+            if ( n > slides.length ) {
+                sliderIndex = 1;
+            }
+            if ( n < 1 ) {
+                sliderIndex = slides.length;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+
+            for (let i = 0; i < dot.length; i++) {
+                dot[i].classList.remove('dot-active');
+            }
+
+            slides[sliderIndex-1].style.display = 'block';
+            dot[sliderIndex-1].classList.add('dot-active');
+
+        }
+
+        function plusSlides(n) {
+            showSlides( sliderIndex += n );
+        }
+
+        function currentSlide(n) {
+            showSlides( sliderIndex = n );            
+        }
+
+        dotsWrap.addEventListener('click', function (event) {
+           for (let i = 0; i < dot.length + 1; i++) {
+            if (event.target.classList.contains('dot') && event.target == dot[i-1] ) {
+                currentSlide(i);
+            }
+           } 
+        });
+
+        prev.addEventListener('click', function () {
+           plusSlides(-1); 
+        });
+        next.addEventListener('click', function () {
+           plusSlides(1); 
+        });
+
+
+        let persons = document.getElementsByClassName('counter-block-input')[0],
+            restDays = document.getElementsByClassName('counter-block-input')[1],
+            place = document.getElementById('select'),
+            totalValue = document.getElementById('total'),
+            personsSum = 0,
+            daysSum = 0,
+            total = 0;
+
+            totalValue.innerHTML = 0;
+            totalValue.style.color = '#fff';
+
+            persons.addEventListener('change', function () {
+                personsSum = +this.value;
+                total = (daysSum + personsSum)*4000;
+                if ( restDays.value == '' ) {
+                    totalValue.innerHTML = 0;
+                } else {
+                    place.selectedIndex = "0";
+                    totalValue.style.color = '#fff';
+                    let count = parseInt(totalValue.innerHTML);
+                    let timer = setInterval(() => {
+                        if ( total > count ) {
+                            count += 100;
+                            totalValue.innerHTML = count;    
+                        } else if ( total < count ) {
+                            count -= 1000;
+                            totalValue.innerHTML = count;    
+                        } else if (total == count) {
+
+                            totalValue.style.color = '#c78030';
+                            clearInterval(timer);
+                        }
+                    }, 10);
+                }
+            });
+
+            restDays.addEventListener('change', function () {
+                daysSum = +this.value;
+                total = (daysSum + personsSum)*4000;
+                if ( persons.value == '' ) {
+                    totalValue.innerHTML = 0;
+                } else {
+                    place.selectedIndex = "0";
+                    totalValue.style.color = '#fff';
+                    let count = parseInt(totalValue.innerHTML);
+                    let timer = setInterval(() => {
+                        if ( total > count ) {
+                            count += 100;
+                            totalValue.innerHTML = count;    
+                        } else if ( total < count ) {
+                            count -= 100;
+                            totalValue.innerHTML = count;    
+                        } else if (total == count) {
+
+                            totalValue.style.color = '#c78030';
+                            clearInterval(timer);
+                        }
+                    }, 10);
+                }
+            });
+
+            place.addEventListener('change', function () {
+
+               if ( restDays.value == '' || persons.value == '' ) {
+                    totalValue.innerHTML = 0;
+               } else {
+                let a = total;
+                let newTotal = a * this.options[this.selectedIndex].value;
+                totalValue.style.color = '#fff';
+                let count = parseInt(totalValue.innerHTML);
+                let timer = setInterval(() => {
+                    if ( newTotal > count ) {
+                        count += 100;
+                        totalValue.innerHTML = count;    
+                    } else if ( newTotal < count ) {
+                        count -= 100;
+                        totalValue.innerHTML = count;    
+                    } else if (newTotal == count) {
+
+                        totalValue.style.color = '#c78030';
+                        clearInterval(timer);
+                    }
+                }, 10);
+                }
+            });
+
 
 
 });
