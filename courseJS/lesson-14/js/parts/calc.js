@@ -11,6 +11,9 @@ function calc() {
         totalValue.style.color = '#fff';
 
         persons.addEventListener('change', function () {
+            if (parseInt(this.value) < 0 ) {
+                this.value = '';
+            }
             personsSum = +this.value;
             total = (daysSum + personsSum)*4000;
             if ( restDays.value == '' ) {
@@ -36,6 +39,9 @@ function calc() {
         });
 
         restDays.addEventListener('change', function () {
+            if (parseInt(this.value) < 0 ) {
+                this.value = '';
+            }
             daysSum = +this.value;
             total = (daysSum + personsSum)*4000;
             if ( persons.value == '' ) {
