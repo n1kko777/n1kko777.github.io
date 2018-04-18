@@ -245,6 +245,7 @@ window.addEventListener('DOMContentLoaded', function() {
         } else {
             showError(bio);
         }
+        
 
         condidateInfo.gender = document.querySelector('input[type=radio]:checked').value;
         
