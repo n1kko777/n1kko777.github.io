@@ -1,6 +1,5 @@
 function timer() {
-	let deadline = '2018-04-05';
-	//new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
+	let deadline = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
 	function getTimeRemaining(endtime) {
 	    let t = Date.parse(endtime) - Date.parse(new Date()),
 	        seconds = Math.floor((t / 1000) % 60),
