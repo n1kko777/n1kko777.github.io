@@ -2,7 +2,6 @@
 <html lang="ru">
 
 <head>
-
 	<!-- Важная техническая информация для браузера -->
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,146 +33,67 @@
 
 	<!-- Заголовок на вкладке в браузере  -->
 	<title>Никита Тарасов - создание сайтов</title>
-
-	<!-- Шрифты от Google -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
-
 	<!-- Подключаем наш файл со стилями  -->
-	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
-	<!-- Анимация CSS -->
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/main.min.css">
 </head>
 
-<body>
-	<!-- Тут будет содержиое будущего сайта  -->
+<body id="bg-img">
 	<header>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-7">
-					<img class="header-ing wow fadeInLeftBig" data-wow-delay="0.1s" src="img/main-img.png" alt="Монитор">
-				</div>
-				<!-- /.col-7 -->
-				<div class="col-lg-5">
-					<p class="header-pretitle wow fadeInRightBig" data-wow-delay="0.2s">Веб-разработчик</p>
-					<h1 class="header-title wow fadeInRightBig" data-wow-delay="0.3s">Никита Тарасов</h1>
-					<p class="header-subtitle wow fadeInRightBig" data-wow-delay="0.4s">Верстка на HTML/CSS/JavaScript
-						<br> Разработка сайтов под ключ</p>
-					<div class="header-button-block wow fadeInRightBig" data-wow-delay="0.5s">
-						<a class="header-button" href="https://api.whatsapp.com/send?phone=79655091360" onclick="yaCounter47643580.reachGoal('portfolio'); return true;">Связаться</a>
-						<small>*Это бесплатно</small>
-					</div>
-				</div>
-				<!-- /.col-5 -->
-			</div>
-			<!-- /.row -->
+		<div class="menu-btn">
+			<div class="btn-line"></div>
+			<div class="btn-line"></div>
+			<div class="btn-line"></div>
 		</div>
-		<!-- /.container -->
+
+		<nav class="menu">
+			<div class="menu-branding">
+				<div class="portrait"></div>
+			</div>
+			<ul class="menu-nav">
+				<li class="nav-item current">
+					<a href="index.html" class="nav-link">Главная</a>
+				</li>
+				<li class="nav-item">
+					<a href="about.html" class="nav-link">Обо Мне</a>
+				</li>
+				<li class="nav-item">
+					<a href="work.html" class="nav-link">Мои работы</a>
+				</li>
+				<li class="nav-item">
+					<a href="contact.html" class="nav-link">Связаться со мной</a>
+				</li>
+			</ul>
+		</nav>
 	</header>
-	<section class="portfolio">
-		<div class="container">
-			<div class="portfolio-block  wow fadeIn">
-				<h2 class="portfolio-title">Портфолио</h2>
-				<p class="portfolio-subtitle">Мои работы</p>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="portfolio-col-1">
-							<img src="img/new-port-logo-1.jpg" alt="Premium">
-							<h3>Сайт бытовой техники премиум класса «Premium»</h3>
-							<p class="portfolio-text">Одностраничный сайт, который одинаково отображается во всех современных браузерах, а также имеет адаптацию под мобильные
-								устройства.
-							</p>
-							<a href="http://xn-----7kcbcgsfvgwpbukjr6bel6c0h4d.xn--p1ai/">Смотреть работу</a>
-						</div>
-						<!-- /.portfolio-col -->
-					</div>
-					<!-- <div class="developing__text">Сайт находиться в разработке</div>
-					<div class="developing"></div>  /.developing -->
-					<div class="col-md-6">
-						<div class="portfolio-col-2">
 
-							<img src="img/new-port-logo-2.jpg" alt="Дом для себя.рф">
-							<h3>Сайт компании строительства домов под ключ «Дом для себя.рф»</h3>
-							<p class="portfolio-text">Одностраничный сайт, который одинаково отображается во всех современных браузерах, а также имеет адаптацию под мобильные
-								устройства. Имеется возможность выбора компонентов дома, реализована форма обратной связи.</p>
-							<a href="http://xn--90afae3aen1a9jd.xn--p1ai/">Смотреть работу</a>
-
-						</div>
-						<!-- /.portfolio-col -->
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="portfolio-col-3">
-							<img src="img/new-port-logo-3.jpg" alt="Travel">
-							<h3>Сайт тур-агентства</h3>
-							<p class="portfolio-text">Одностраничный сайт, логика которого прописана без использования сторонних библиотек, что делает сайт быстрозагружаемым
-								и не зависимым от других ресурсов.</p>
-							<a href="https://n1kko777.github.io/courseJS/lesson-14/">Смотреть работу</a>
-						</div>
-						<!-- /.portfolio-col -->
-					</div>
-					<!-- <div class="developing__text">Сайт находиться в разработке</div>
-						<div class="developing"></div>  /.developing -->
-					<div class="col-md-6">
-						<div class="portfolio-col-4">
-							<img src="img/new-port-4.jpg" alt="STP">
-							<h3>Сайт официального дилера Стандартпласт в Екатеринбурге</h3>
-							<p class="portfolio-text">Одностраничный сайт, Быстро загружается на всех видах устройств. Реализована загрузка информации из google таблиц,
-								форма обратной связи без перезагрузки страницы.</p>
-							<a href="http://stpline.ru/">Смотреть работу</a>
-							<!-- /.portfolio-col -->
-						</div>
-					</div>
-				</div>
-			</div>
-	</section>
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<h4 class="footer-author">Никита Тарасов</h4>
-					<p class="footer-text">Разработка сайтов под ключ</p>
-				</div>
-				<!-- /.col-4 -->
-				<div class="col-md-4">
-					<div class="social-block">
-						<p>Подпишитесь:</p>
-						<a class="wow bounceInDown" data-wow-delay="0.1s" href="https://www.facebook.com/profile.php?id=100001934871494">
-							<img src="img/social/facebook-logo-button.png" alt="Facebook">
-						</a>
-						<a class="wow bounceInDown" data-wow-delay="0.2s" href="https://telegram.me/n1kko777">
-							<img src="img/social/telegram-symbol.png" alt="Telegram">
-						</a>
-						<a class="wow bounceInDown" data-wow-delay="0.3s" href="https://vk.com/nikko777">
-							<img src="img/social/vk-social-logotype.png" alt="Вконтакте">
-						</a>
-						<a class="wow bounceInDown" data-wow-delay="0.4s" href="https://www.youtube.com/channel/UCtnieDKbqBR3ItJYVVOGlpw">
-							<img src="img/social/youtube-symbol.png" alt="Youtube">
-						</a>
-					</div>
-				</div>
-				<!-- /.col-4 -->
-				<div class="col-md-4">
-					<div class="footer-cta-block">
-						<p class="footer-cta">Напишите мне:</p>
-						<a class="footer-btn" onclick="yaCounter47643580.reachGoal('portfolio'); return true;" href="https://api.whatsapp.com/send?phone=79655091360">Написать</a>
-					</div>
-				</div>
-				<!-- /.col-4 -->
-			</div>
-			<!-- /.row -->
+	<main id="home">
+		<h1 class="lg-heading">
+			Никита
+			<span class="text-secondary">Тарасов</span>
+		</h1>
+		<h2 class="sm-heading">
+			Web-разработчик | Верстка на HTML/CSS/JavaScript | Разработка сайтов под ключ
+		</h2>
+		<div class="icons">
+			<a href="https://vk.com/nikko777">
+				<i class="fab fa-vk fa-2x"></i>
+			</a>
+			<a href="https://telegram.me/n1kko777">
+				<i class="fab fa-telegram fa-2x"></i>
+			</a>
+			<a href="https://api.whatsapp.com/send?phone=79655091360">
+				<i class="fab fa-whatsapp fa-2x"></i>
+			</a>
+			<a href="https://github.com/n1kko777">
+				<i class="fab fa-github fa-2x"></i>
+			</a>
+			<a href="mailto:3734489@gmail.com">
+				<i class="fas fa-envelope fa-2x"></i>
+			</a>
 		</div>
-		<!-- /.container -->
-	</footer>
+	</main>
 
-
-	<script src="js/wow.min.js"></script>
-	<!-- <script src="js/scripts.js"></script> -->
-	<script>
-		new WOW().init();
-	</script>
-
+	<script src="js/main.js"></script>
 
 	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function () { try { w.yaCounter47643580 = new Ya.Metrika2({ id: 47643580, clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true }); } catch (e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/tag.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks2"); </script>
