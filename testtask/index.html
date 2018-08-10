@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Тестовое задание</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Open Sans";
+      font-size: 18px;
+      font-weight: 400;
+      color: #212121;
+    }
+
+    .container {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    a {
+      outline: none;
+    }
+
+    .main-bg {
+      margin-bottom: 38px;
+    }
+
+    .main-title {
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .delivery-rules__title,
+    .delivery-cars__title,
+    .delivery-dest__title,
+    .purchase-title,
+    .order-title {
+      margin: 0;
+      margin-left: 10px;
+      margin-bottom: 25px;
+      color: #212121;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    .delivery-rules__title::after,
+    .delivery-cars__title::after,
+    .delivery-dest__title::after,
+    .purchase-title::after,
+    .order-title::after {
+      content: "";
+      display: block;
+      margin-top: 6px;
+      margin-left: -10px;
+      width: 101%;
+      height: 2px;
+      background-color: #f7941d;
+    }
+
+    .delivery-rules__list,
+    .purchase__list {
+      padding: 0;
+      padding-left: 30px;
+      margin-bottom: 57px;
+    }
+
+    .delivery-cars {
+      margin-top: 5px;
+      font-size: 18px;
+    }
+
+    .delivery-cars__card {
+      display: grid;
+      grid-gap: 32px;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 60px;
+    }
+
+    .card {
+      box-shadow: 0 13px 21px rgba(0, 0, 0, 0.21);
+      border-radius: 5px;
+      border: 1px solid #c2c2c2;
+      padding: 0 32px 20px 32px;
+    }
+
+    .card-img {
+      display: block;
+      margin: 32px auto 10px auto;
+      width: 300px;
+      height: 200px;
+    }
+
+    .card-title {
+      margin: 0;
+    }
+
+    .card-param,
+    .card-value {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: inline-block;
+    }
+
+    .card-param {
+      width: 60%;
+    }
+
+    .card-value {
+      width: 30%;
+    }
+
+    .delivery-dest,
+    .purchase,
+    .order-text {
+      margin-bottom: 55px;
+    }
+
+    .item {
+      margin: 0 auto;
+      margin-bottom: 40px;
+    }
+
+    .item-img {
+      width: 45%;
+      max-width: 500px;
+      max-height: 400px;
+      box-shadow: 0 13px 21px rgba(0, 0, 0, 0.21);
+      border-radius: 5px;
+      border: 10px solid #ffffff;
+    }
+
+    .item-text {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+      margin: 60px auto;
+      text-align: center;
+    }
+
+    .item-title {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 34px;
+      text-transform: uppercase;
+      margin-bottom: 55px;
+    }
+
+    .item-btn {
+      color: #ff8205;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 34px;
+      text-transform: uppercase;
+      border: 1px solid #ff8205;
+      text-decoration: none;
+      padding: 24px 85px;
+    }
+
+    .order-text {
+      line-height: 34px;
+    }
+
+    .order-text strong {
+      font-weight: 700;
+      line-height: 24px;
+    }
+
+    .order-offer {
+      padding: 60px 0;
+      background-color: #ff8205;
+      text-align: center;
+    }
+
+    .order-offer__btn {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 22px 72px;
+      border: 1px solid #ffffff;
+    }
+
+    /* 20 мин. */
+
+    @media (max-width: 874px) {
+      .delivery-cars__card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 769px) {
+      .item-img {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+      .item-text {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 595px) {
+      .item-img {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 375px) {
+      .card {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .card-img {
+        width: 250px;
+      }
+      .card-value {
+        text-align: right;
+      }
+      .item-btn,
+      .order-offer__btn {
+        padding: 14px 45px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Изучение ТЗ - 15 мин -->
+  <!-- Анализ макета(извлечение изображений, шрифтов и т.д.) - 5 мин -->
+  <!-- Настройка пректа - 5 мин -->
+  <div class="container">
+    <!-- 3 мин -->
+    <img src="main_bg.jpg" alt="" class="main-bg">
+    <h1 class="main-title">FreezeMarket - быстрая доставка деталей для холодильных устройств.</h1>
+    <!-- 7 мин -->
+    <div class="delivery-rules">
+      <h2 class="delivery-rules__title">Условия доставки</h2>
+      <ul class="delivery-rules__list">
+        <li>доставляем по всей России</li>
+        <li>автомобильный и железнодорожный транспорт</li>
+        <li>короткие сроки, удобное для вас время и место</li>
+        <li>необходимые документы в дорогу</li>
+        <li>сопровождение груза экспедитором по запросу</li>
+      </ul>
+    </div>
+    <!-- 30 мин. -->
+    <div class="delivery-cars">
+      <h2 class="delivery-cars__title">Доставка собственным автопарком по Екатеринбургу</h2>
+      <div class="delivery-cars__card">
+        <div class="card">
+          <div class="card-img">
+            <img src="card-1.png" alt="">
+          </div>
+          <h3 class="card-title">ГАЗель</h3>
+          <div class="card-text">
+            <ul class="card-param">
+              <li>Длина кузова</li>
+              <li>Грузоподъёмность</li>
+              <li>Доставка по г.Екатеринбург</li>
+            </ul>
+            <ul class="card-value">
+              <li>3 м.</li>
+              <li>1,5 т.</li>
+              <li>1 000р.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img">
+            <img src="card-2.png" alt="">
+          </div>
+          <h3 class="card-title">ГАЗель Катюша</h3>
+          <div class="card-text">
+            <ul class="card-param">
+              <li>Длина кузова</li>
+              <li>Грузоподъёмность</li>
+              <li>Доставка по г.Екатеринбург</li>
+            </ul>
+            <ul class="card-value">
+              <li>6 м.</li>
+              <li>1,3 м.</li>
+              <li>1 500р.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img">
+            <img src="card-3.png" alt="">
+          </div>
+          <h3 class="card-title">HUNDAI HD72</h3>
+          <div class="card-text">
+            <ul class="card-param">
+              <li>Длина кузова</li>
+              <li>Грузоподъёмность</li>
+              <li>Доставка по г.Екатеринбург</li>
+            </ul>
+            <ul class="card-value">
+              <li>6 м.</li>
+              <li>5 т.</li>
+              <li>2 500 р.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img">
+            <img src="card-4.png" alt="">
+          </div>
+          <h3 class="card-title">МАЗ 20Т</h3>
+          <div class="card-text">
+            <ul class="card-param">
+              <li>Длина кузова</li>
+              <li>Грузоподъёмность</li>
+              <li>Доставка по г.Екатеринбург</li>
+            </ul>
+            <ul class="card-value">
+              <li>12 м.</li>
+              <li>20 т.</li>
+              <li>6 000 р.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 20 мин. -->
+    <div class="delivery-dest">
+      <h2 class="delivery-dest__title">Доставка по России</h2>
+      <div class="delivery-dest__item">
+        <div class="item">
+          <img src="item-1.png" alt="" class="item-img">
+          <div class="item-text">
+            <h3 class="item-title">Автопарк транспортной компании</h3>
+            <a href="#" class="item-btn">Заказать расчет</a>
+          </div>
+        </div>
+        <div class="item">
+          <img src="item-2.png" alt="" class="item-img">
+          <div class="item-text">
+            <h3 class="item-title">Железнодорожный транспорт</h3>
+            <a href="#" class="item-btn">Заказать расчет</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 5 мин. -->
+    <div class="purchase">
+      <h2 class="purchase-title">Преимущества покупки с доставкой</h2>
+      <ul class="purchase__list">
+        <li>Возможна доставка в день заказа.</li>
+        <li>Доставляем от 1 погонного метра.</li>
+        <li>Оплата по факту получения при доставке собственным автопарком.</li>
+        <li>Минимально возможная цена на перевозку.</li>
+        <li>Транспорт всегда в наличии.</li>
+        <li>Автомобили различной грузоподъемности, на любой объем поставки.</li>
+        <li>Гарантируем сохранность товарного вида металлопроката.</li>
+        <li>Все задачи логистики решаются нашими специалистами.</li>
+      </ul>
+    </div>
+    <!-- 10 мин. -->
+    <div class="order">
+      <h2 class="order-title">Как заказать доставку</h2>
+      <p class="order-text">
+        В заказе на доставку
+        <br> 1. Сообщите адрес доставки
+        <br> 2. Приложите схему проезда
+        <br> 3. Сообщите дату доставки и часы работы в день приемки
+        <br> 4. Контактное лицо принимающей стороны
+        <br>
+        <strong>Важно! Разгрузка производится силами принимающей стороны, при наличии доверенности, паспорта или печати организации.</strong>
+      </p>
+    </div>
+  </div>
+  <div class="order-offer">
+    <a href="#" class="order-offer__btn">Заказать ДОСТАВКУ</a>
+  </div>
+
+  <!-- Итого - 105 мин. -->
+</body>
+
+</html>
