@@ -1,0 +1,475 @@
+@import "libs/reset.less";
+
+/* Varibles */
+@trsTime: 0.7s;
+a,
+input,
+textarea,
+button {
+  outline: none;
+}
+
+input,
+button {
+  -webkit-appearance: none !important;
+}
+
+a:hover {
+  color: #00ecff;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 10px;
+  background-color: #191826;
+  color: #fff;
+
+  font-style: normal;
+  font-weight: normal;
+  box-sizing: border-box;
+  text-align-last: left;
+}
+
+.aside {
+  z-index: 100;
+  box-sizing: border-box;
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 295px;
+
+  background: linear-gradient(180deg, rgba(49, 48, 64, 0) 0%, #313040 34.84%);
+
+  &__logo {
+    display: block;
+    width: 207px;
+    margin: 40px auto 30px;
+  }
+
+  &__footer {
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    font-size: 1.8em;
+
+    color: #828282;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
+
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+  }
+}
+
+.nav-menu {
+  padding-left: 40px;
+  &__btn {
+    display: none;
+  }
+  &__list__link {
+    display: block;
+    padding-bottom: 26px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    font-size: 2.4em;
+
+    color: #f2f2f2;
+    text-decoration: none;
+  }
+  .active {
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
+  }
+}
+
+.page-section {
+  box-sizing: border-box;
+  position: relative;
+  margin-left: 385px;
+  max-width: 1335px;
+  min-height: 100%;
+  padding-bottom: 20px;
+
+  &__hide-title {
+    display: none;
+  }
+}
+
+.main {
+  min-height: 713px;
+  padding-top: 25px;
+}
+
+.visitka {
+  &__prof {
+    z-index: 3;
+    position: relative;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-size: 6em;
+    letter-spacing: 0.05em;
+    margin-bottom: 56px;
+
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.9);
+  }
+  &__name {
+    z-index: 3;
+    position: relative;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    font-size: 7em;
+
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.9);
+  }
+  &__surname {
+    z-index: 3;
+    position: relative;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    font-size: 7em;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.9);
+    margin: 5px 0 15px;
+  }
+  &__phone {
+    z-index: 3;
+    position: relative;
+    &-link {
+      text-decoration: none;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      font-size: 6em;
+      color: #fff;
+      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.9);
+    }
+  }
+  &__img {
+    position: absolute;
+    right: 0;
+    top: 65px;
+    z-index: 1;
+  }
+}
+
+.logo_j {
+  z-index: -2;
+}
+
+.about {
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 650px));
+  grid-gap: 95px 30px;
+
+  &-content {
+    font-size: 3em;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
+    font-weight: 300;
+    color: #828282;
+  }
+
+  &__title {
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: normal;
+  }
+
+  &__text {
+    text-indent: 30px;
+    line-height: 42px;
+  }
+  &-avatar {
+    width: 100%;
+  }
+}
+
+.portfolio {
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 295px);
+  grid-gap: 50px;
+  &-list {
+    cursor: pointer;
+    max-width: 295px;
+    height: 295px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &-list:hover {
+    box-shadow: 0px 0px 15px #ffffff;
+  }
+}
+
+.price {
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 412px));
+  grid-gap: 20px 49px;
+}
+
+.portfolio-item {
+  box-shadow: 0px 0px 15px #0079be;
+  box-sizing: border-box;
+  padding: 20px 30px 20px 30px;
+  max-width: 412px;
+  min-height: 206px;
+  position: relative;
+  &__title {
+    font-size: 2.4em;
+  }
+  &__time {
+    margin-top: 9px;
+    font-weight: 300;
+    font-size: 1.8em;
+  }
+  &__price {
+    font-weight: 300;
+    font-size: 2.4em;
+    text-align: right;
+
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+  }
+  &__price-number {
+    font-weight: 600;
+  }
+
+  &-1 {
+    background: linear-gradient(116.57deg, #007dc2 0%, #00448a 100%);
+  }
+  &-2 {
+    background: linear-gradient(116.57deg, #c165dd 0%, #5c27fe 100%);
+  }
+  &-3 {
+    background: linear-gradient(116.57deg, #007dc2 0%, #00448a 100%);
+  }
+  &-4 {
+    background: linear-gradient(116.57deg, #c165dd 0%, #5c27fe 100%);
+  }
+  &-5 {
+    background: linear-gradient(116.57deg, #007dc2 0%, #00448a 100%);
+  }
+  &-6 {
+    background: linear-gradient(116.57deg, #c165dd 0%, #5c27fe 100%);
+  }
+  &-7 {
+    background: linear-gradient(116.57deg, #007dc2 0%, #00448a 100%);
+  }
+  &-8 {
+    background: linear-gradient(116.57deg, #c165dd 0%, #5c27fe 100%);
+  }
+  &-9 {
+    background: linear-gradient(116.57deg, #007dc2 0%, #00448a 100%);
+  }
+}
+
+.contacts {
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 650px));
+  grid-gap: 30px;
+  box-sizing: border-box;
+  padding-bottom: 50px;
+
+  &-text {
+    width: 100%;
+  }
+  &-text__item__link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    line-height: 58px;
+    font-size: 2.4em;
+
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
+
+    &--light {
+      color: #828282;
+    }
+  }
+
+  &-map {
+    width: 100%;
+    max-width: 650px;
+  }
+}
+
+@media screen and (max-width: 1664px) {
+  .page-section {
+    margin-left: 355px;
+  }
+  .contacts,
+  .about {
+    grid-template-columns: repeat(auto-fit, minmax(auto, 500px));
+  }
+}
+
+@media screen and (max-width: 1530px) {
+  .visitka__img {
+    opacity: 0.4;
+  }
+}
+
+@media screen and (max-width: 1390px) {
+  .contacts,
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 1075px) {
+  .aside {
+    transform: translateX(-295px);
+    transition: all @trsTime;
+  }
+
+  .aside.active {
+    transform: translateX(0);
+    z-index: 20;
+  }
+
+  .page-section {
+    transition: all @trsTime;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 20px 0 100px;
+  }
+
+  .page-section.active::before {
+    transition: all @trsTime;
+    z-index: 10;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-menu__btn {
+    position: fixed;
+    top: 50px;
+    left: 30px;
+    display: block;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 9999;
+    transition: all @trsTime;
+    transform: translateX(0);
+  }
+
+  .nav-menu__btn.active {
+    transform: translateX(295px);
+  }
+
+  .nav-menu__btn span {
+    display: block;
+    width: 35px;
+    height: 3px;
+    margin: 7px 0;
+    background-color: #fff;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio {
+    grid-template-columns: 1fr;
+
+    &-list {
+      justify-self: center;
+      cursor: pointer;
+      max-width: 412px;
+      height: 306px;
+    }
+  }
+
+  .price {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-item {
+    justify-self: center;
+    width: 100%;
+    max-width: 412px;
+  }
+
+  .visitka__img {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .about__text {
+    text-indent: 0;
+    line-height: normal;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .about {
+    grid-gap: 15px;
+  }
+  body {
+    font-size: 8px;
+  }
+
+  .main {
+    display: grid;
+    align-content: top;
+  }
+
+  .visitka {
+    &__prof {
+      font-size: 4em;
+      margin-bottom: 30px;
+    }
+    &__name {
+      font-size: 5em;
+    }
+    &__surname {
+      font-size: 5em;
+    }
+    &__phone {
+      &-link {
+        font-size: 3.5em;
+      }
+    }
+
+    &__img {
+      top: 10%;
+    }
+  }
+
+  .page-section {
+    padding-left: 70px;
+  }
+
+  .nav-menu__btn {
+    top: 40px;
+    left: 25px;
+    height: 25px;
+    width: 25px;
+  }
+
+  .portfolio-item {
+    padding: 10px 20px 10px 20px;
+  }
+}
