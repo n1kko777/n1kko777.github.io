@@ -51,8 +51,8 @@ $(document).ready(function() {
     .height($(".contacts-map").width());
 
   /* get instagram images */
-  var token = "286197751.e724ce5.4b1c69c9756b4919aa1f48fd3b073604",
-    userid = "286197751",
+  var token = "5478402698.0315412.ad9e3a1dcf09490d80f97c3a98a3710d",
+    userid = "5478402698",
     instgr = $(".portfolio-list"),
     num_photos = instgr.length;
 
