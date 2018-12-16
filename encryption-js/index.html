@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Шифрование/дешифрование данных</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <nav class="nav">
+    <ul class="nav-items">
+      <li>
+        <a class="nav-item" target="_blank" href="https://n1kko777.github.io"><img src="../img/avatar.jpg" alt="" class="nav-item__img"></a>
+      </li>
+      <li>
+        <a class="nav-item" href="/encryption-js">encryption-js</a>
+      </li>
+      <li>
+        <a class="nav-item" href="#info">Инфо</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="info" id="info">
+    <span class="info-close">x</span>
+    <div class="info-wrapper">
+      <h2>Никита Тарасов - ИЭ-303п (Декабрь, 2018)</h2>
+      <h3>Алгоритм шифрование AES</h3>
+      <p>Advanced Encryption Standard (AES) — симметричный алгоритм блочного шифрования (размер блока 128 бит, ключ
+        128/192/256 бит), принятый в качестве стандарта шифрования правительством США по результатам конкурса AES.</p>
+      <p>
+        Этот
+        алгоритм хорошо проанализирован и сейчас широко используется, как это было с его предшественником DES.
+        Национальный институт стандартов и технологий США (англ. National Institute of Standards and Technology, NIST)
+        опубликовал спецификацию AES 26 ноября 2001 года после пятилетнего периода, в ходе которого были созданы и
+        оценены 15 кандидатур. 26 мая 2002 года AES был объявлен стандартом шифрования. По состоянию на 2009 год AES
+        является одним из самых распространённых алгоритмов симметричного шифрования.
+      </p>
+
+      <h4>Как применить AES</h4>
+
+      <p>Этот алгоритм преобразует один 128-битный блок в другой, используя секретный ключ который нужен для такого преобразования. Для расшифровки полученного 128-битного блока используют второе преобразование с тем же секретным ключом.</p>
+      
+      <h4>Ссылки:</h4>
+      <ul class="info-lists">
+        <li><a target='_blank' href="https://habr.com/post/112733/">Как устроен AES</a></li>
+        <li><a target='_blank' href="https://code.google.com/archive/p/crypto-js/">Библиотека для шифрования - CryptoJS</a></li>
+        <li><a target='_blank' href="http://www.internet-technologies.ru/articles/sozdanie-prilozheniya-dlya-shifrovaniya-faylov-s-pomoschyu-javascript.html">Статья
+            посвещенная данной тематике</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <a class="back"></a>
+
+  <div id="stage">
+
+    <div id="step1">
+      <div class="content">
+        <h1 class="first">Что вы хотите сделать?</h1>
+        <div class="text-enc">
+          <input type="text" name="textEnc" id="textEnc" class="text-encryption" placeholder="Введите текст">
+          <div class="btn">
+            <a id="cryptText" class="button process red"></a>
+            <a class="cancel">Отмена</a>
+          </div>
+        </div>
+        <a class="mybutton button encryptText green"><img src="assets/img/blocked-text-file.svg" alt="" class="mybutton-img">Зашифровать
+          текст</a>
+        <a class="mybutton button decryptText magenta"><img src="assets/img/blocked-text-page.svg" alt="" class="mybutton-img">Расшифровать
+          текст</a>
+        <a class="button encrypt green">Зашифровать файл</a>
+        <a class="button decrypt magenta">Расшифровать файл</a>
+      </div>
+    </div>
+
+    <div id="step2">
+
+      <div class="content if-encrypt">
+        <h1>Выберите шифруемый файл</h1>
+        <h2>Будет сгенерирована зашифрованная копия файла. Никакие данные на наш сервер не пересылаются.</h2>
+        <a class="button browse blue">Обзор</a>
+
+        <input type="file" id="encrypt-input" />
+      </div>
+
+      <div class="content if-decrypt">
+        <h1>Выберите файл для расшифровки</h1>
+        <h2>Только файлы зашифрованные с помощью данного инструмента.</h2>
+        <a class="button browse blue">Обзор</a>
+
+        <input type="file" id="decrypt-input" />
+      </div>
+
+    </div>
+
+    <div id="step3">
+
+      <div class="content if-encrypt">
+        <h1>Введите пароль</h1>
+        <h2>Данный пароль будет использоваться в качестве ключа для шифрования. Запишите его или запомните; без него вы
+          не сможете восстановить файл. </h2>
+
+        <input type="password" />
+        <a class="step3Enc button process red">Зашифровать!</a>
+      </div>
+
+      <div class="content if-decrypt">
+        <h1>Введите пароль.</h1>
+        <h2>Введите пароль, который использовался при шифровке файла. Без него вы не сможете расшифровать файл.</h2>
+
+        <input type="password" />
+        <a class="step3Enc button process red">Расшифровать!</a>
+      </div>
+
+    </div>
+
+    <div id="step4">
+
+      <div class="content">
+        <h1>Ваш файл готов!</h1>
+        <a class="button download green">Скачать</a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script src="assets/js/core.min.js"></script>
+  <script src="assets/js/aes.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
