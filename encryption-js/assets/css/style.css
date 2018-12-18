@@ -418,6 +418,9 @@ body.decrypt #step2 {
 }
 
 @media screen and (max-width: 860px) {
+	#stage {
+		min-height: 900px;
+	}
 	.info-close {
 		position: absolute;
 		right: 10%;
