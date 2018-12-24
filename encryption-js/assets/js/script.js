@@ -7,6 +7,11 @@ $(function () {
 		back = $('a.back'),
 		mainTtl = $('.first').text();
 
+	let characters = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ы', 'Ъ', 'Э', 'Ю', 'Я', ' '];
+
+	let N = characters.length;
+
+
 	/* Info */
 
 	var info = $('#info'),
@@ -132,7 +137,7 @@ $(function () {
 
 	$('.step3Enc').click(function () {
 
-		var input = $(this).parent().find('input[type=password]'),
+		var input = $(this).parent().find('input[name=password]'),
 			password = input.val();
 
 		input.val('');
@@ -168,10 +173,10 @@ $(function () {
 
 		if (body.hasClass('encrypt')) {
 
-			// Encrypt the file!
-
+			// Encrypt!
 			if (params === 'text') {
-				let cryptedText = CryptoJS.AES.encrypt(cryproText, password).toString();
+				let Vizhener = Encode(cryproText, password);
+				let cryptedText = CryptoJS.AES.encrypt(Vizhener, password).toString();
 				cryproText = '';
 				return cryptedText;
 			}
@@ -211,12 +216,15 @@ $(function () {
 			// Decrypt it!
 
 			if (params === 'text') {
+
 				let deryptedText = CryptoJS.AES.decrypt(cryproText, password).toString(CryptoJS.enc.Utf8);
 
 				if (deryptedText === "") {
 					alert("Неверный пароль! Повторите попытку.");
 					return cryproText;
 				}
+				cryproText = Decode(deryptedText, password);
+				deryptedText = cryproText;
 				cryproText = '';
 				return deryptedText;
 			}
@@ -250,6 +258,65 @@ $(function () {
 
 		}
 	}
+
+	//зашифровать
+  function Encode(input, keyword) {
+    let inputEnc = input.toUpperCase();
+    let keywordEnc = keyword.toUpperCase();
+
+    let result = "";
+
+    let keyword_index = 0;
+
+    for (var symbol in inputEnc) {
+      
+      let c = (characters.indexOf(inputEnc[symbol]) +
+        characters.indexOf(keywordEnc[keyword_index])) % N;
+
+      result += characters[c];
+
+      keyword_index++;
+
+      if ((keyword_index + 1) == keywordEnc.length)
+        {
+          keyword_index = 0;
+        }
+      
+    }
+
+    return result;
+  }
+
+  //расшифровать
+  function Decode(input, keyword) {
+    let inputDec = input.toUpperCase();
+    let keywordDec = keyword.toUpperCase();
+
+    let result = "";
+
+    let keyword_index = 0;
+
+    for (var symbol in inputDec) {
+      let p = (characters.indexOf(inputDec[symbol]) -
+        characters.indexOf(keywordDec[keyword_index])) % N;
+        
+      if (p < 0) {
+        p += characters.length;
+      }
+
+      result += characters[p];
+
+      keyword_index++;
+
+
+      if ((keyword_index + 1) == keywordDec.length)
+      {
+        keyword_index = 0;
+      }
+    }
+
+    return result.toLowerCase();
+  }
 
 
 	/* The back button */

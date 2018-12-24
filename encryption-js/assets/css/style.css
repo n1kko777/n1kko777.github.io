@@ -40,7 +40,7 @@ body {
 	left: 0;
 	background-color: #444;
 	-webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
-	        box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+	box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
 	height: 50px;
 	width: 100%;
 }
@@ -55,14 +55,14 @@ body {
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
-	    -ms-flex-direction: row;
-	        flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
 	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 .nav-item__img {
@@ -112,13 +112,13 @@ a.nav-item:hover {
 	color: #444;
 	padding: 30px 30px;
 	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	width: 700px;
 	max-width: 90%;
 	margin: 20px auto;
 	background-color: #fff;
 	-webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
-	        box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
+	box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
 }
 
 .info-wrapper h3 {
@@ -147,16 +147,16 @@ a.nav-item:hover {
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
 	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 	max-width: 440px;
 	margin: 0 auto;
 }
 
 .btn a {
-	margin: 15px 0!important;
+	margin: 15px 0 !important;
 }
 
 #stage {
@@ -250,7 +250,7 @@ body.decrypt .if-decrypt {
 	display: block;
 	line-height: 70px;
 	-webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
-	        box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
+	box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.08);
 	cursor: pointer;
 	font-size: 18px;
 	margin: 15px auto;
@@ -369,8 +369,7 @@ body.decrypt #step2 {
 	background-color: #d5d788;
 }
 
-#step3 input[type=password],
-#step1 input[type=password],
+#step3 input[name=password],
 #step1 input[type=text] {
 	background-color: #fff;
 	border: none;
@@ -384,12 +383,15 @@ body.decrypt #step2 {
 	margin-bottom: 18px;
 	border-radius: 2px;
 	-webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
-	        box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
+	box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.05);
 	font-size: 32px;
 	color: #555;
 }
 
-#step1 input[type=password],
+#step3 input[name=password] {
+	-webkit-text-security: disc;
+}
+
 #step1 input[type=text] {
 	display: block;
 	margin-left: auto;
@@ -420,8 +422,9 @@ body.decrypt #step2 {
 @media screen and (max-width: 860px) {
 	#step1 .content {
 		margin-top: 0;
-    top: 10%;
+		top: 10%;
 	}
+
 	.info-close {
 		position: absolute;
 		right: 10%;
