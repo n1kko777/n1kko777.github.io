@@ -87,8 +87,9 @@
   <section class="video">
     <div class="overlay">
     </div>
-    <video poster="img/video-bg.jpg">
-      <source src="#">
+    <video id="playVideo" autoplay="autoplay" loop="loop" poster="img/video-bg.jpg" preload="auto" muted="muted">
+      <source src="video/LA_Traffic_Sunset_Blvd_1.mp4">
+      </source>
     </video>
     <button class="video-play">
       <img src="img/play.png" alt="">
@@ -266,8 +267,10 @@
             <input type="email" name="email" id="email" placeholder="Email">
             <input type="text" name="subject" id="subject" placeholder="Subject">
             <textarea name="message" id="message" placeholder="Your Massage"></textarea>
-
-            <input type="submit" value="SUBMIT" class="learn-more learn-more--left">
+            <div class="submit-form">
+              <input type="submit" value="SUBMIT" class="learn-more learn-more--left">
+              <label for="agree"><input checked="checked" id="agree" type="checkbox">Subscribe on our News!</label>
+            </div>
           </form>
         </div>
         <div class="callback-item">
@@ -357,8 +360,6 @@
       </div>
     </div>
   </footer>
-
-
 </body>
 
 </html>
