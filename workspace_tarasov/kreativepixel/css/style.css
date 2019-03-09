@@ -153,6 +153,62 @@ table {
   clip: rect(0 0 0 0);
 }
 
+/* Animation keyframes */
+@keyframes shake {
+
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scalling {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes coloring {
+  0% {
+    color: #fff;
+  }
+
+  100% {
+    color: rgb(250, 200, 27);
+  }
+}
+
+
 body {
   font-family: "Lato", sans-serif;
   letter-spacing: normal;
@@ -434,6 +490,33 @@ header {
   align-items: center;
   font-size: 70px;
   color: rgb(255, 255, 255);
+}
+
+.anim-shake:hover i {
+  animation: shake 2s cubic-bezier(.36, .07, .19, .97) both;
+  transform: translate3d(0, 0, 0);
+}
+
+.anim-rotation:hover i {
+  animation-name: rotation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.anim-scalling:hover i {
+  animation-name: scalling;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.anim-coloring:hover i {
+  animation-name: coloring;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
 }
 
 .check-item>a:hover .check-item__icon {
