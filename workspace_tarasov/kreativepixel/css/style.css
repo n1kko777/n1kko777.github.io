@@ -164,7 +164,7 @@ body {
   width: 98%;
 }
 
-section:not(:first-child, :last-child)::before {
+section:not(:first-child):not(:last-child)::before {
   content: '';
   display: block;
   width: 88px;
