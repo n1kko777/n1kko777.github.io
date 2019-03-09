@@ -19,16 +19,21 @@
   <header>
     <div class="container">
       <div class="header">
-        <div class="logo">
+        <a href="#" class="logo">
           <object class="logo__img" type="image/svg+xml" data="img/logo.svg">
             <img src="img/logo.png" alt="KreativePixel" />
           </object>
           <h1 class="logo__ttl visually-hidden">KreativePixel</h1>
-        </div>
+        </a>
 
         <nav>
+          <button class="mobile">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <ul class="menu">
-            <li><a href="#">Home</a></li>
+            <li><a class="active" href="#">Home</a></li>
             <li><a href="#">Features</a></li>
             <li><a href="#">Shop</a></li>
             <li><a href="#">Blog</a></li>
@@ -48,11 +53,10 @@
         <p class="banner__text">Lorem ipsum dolor sit amet, consectetur adipisc ing elit. Aliquam viverra consectetur
           nibh a blan dit. Proin at amet consectetur adipisc lacinia nunc.</p>
 
-        <a href="#" class="view-btn">View Projects</a>
+        <a href="#" class="view-btn"><span>View Projects</span></a>
 
         <div class="navigation">
           <span class="active"></span>
-          <span></span>
           <span></span>
           <span></span>
         </div>
@@ -65,34 +69,44 @@
 
         <ul class="chech-items">
           <li class="check-item">
-            <div class="check-item__icon active"><i class="fas fa-mobile-alt"></i></div>
-            <h4 class="check-item__ttl active">Mobile Ready</h4>
-            <p class="check-item__text"> Lorem ipsum dolor sit amet, consectetur adipisc ing. Aliquam viverra dolor sit
-              consectetur nibh a blan.</p>
-            <a href="#" class="view-btn view-btn--white">Read More</a>
+            <a href="#">
+              <span class="check-item__icon"><i class="fas fa-mobile-alt"></i></span>
+              <h4 class="check-item__ttl">Mobile Ready</h4>
+              <p class="check-item__text"> Lorem ipsum dolor sit amet, consectetur adipisc ing. Aliquam viverra dolor
+                sit
+                consectetur nibh a blan.</p>
+            </a>
+            <a href="#" class="view-btn view-btn--white"><span>View Projects</span></a>
           </li>
           <li class="check-item">
-            <div class="check-item__icon"><i class="fab fa-html5"></i></div>
-            <h4 class="check-item__ttl">HTML5 Valid</h4>
-            <p class="check-item__text"> Lorem ipsum dolor sit amet, consectetur adipisc ing elit. Aliquam viverra
-              dolor sit
-              consectetur nibh a blan dit nunc.</p>
-            <a href="#" class="view-btn view-btn--white">Read More</a>
+            <a href="#">
+              <span class="check-item__icon"><i class="fab fa-html5"></i></span>
+              <h4 class="check-item__ttl">HTML5 Valid</h4>
+              <p class="check-item__text"> Lorem ipsum dolor sit amet, consectetur adipisc ing elit. Aliquam viverra
+                dolor sit
+                consectetur nibh a blan dit nunc.</p>
+            </a>
+            <a href="#" class="view-btn view-btn--white"><span>View Projects</span></a>
           </li>
           <li class="check-item">
-            <div class="check-item__icon"><i class="fab fa-css3"></i></div>
-            <h4 class="check-item__ttl">CSS3 Magic </h4>
-            <p class="check-item__text"> Lorem ipsum dolor sit amet, consectetur adipisc ing. Aliquam viverra dolor sit
-              consectetur nibh a blan.</p>
-            <a href="#" class="view-btn view-btn--white">Read More</a>
+            <a href="#">
+              <span class="check-item__icon"><i class="fab fa-css3"></i></span>
+              <h4 class="check-item__ttl">CSS3 Magic </h4>
+              <p class="check-item__text"> Lorem ipsum dolor sit amet, consectetur adipisc ing. Aliquam viverra dolor
+                sit
+                consectetur nibh a blan.</p>
+            </a>
+            <a href="#" class="view-btn view-btn--white"><span>View Projects</span></a>
           </li>
           <li class="check-item">
-            <div class="check-item__icon"><i class="fas fa-star"></i></div>
-            <h4 class="check-item__ttl">Amazing design </h4>
-            <p class="check-item__text"> Lorem ipsum dolor sit amet, consectetur adipisc ing elit. Aliquam viverra
-              dolor sit
-              consectetur nibh a blan dit nunc.</p>
-            <a href="#" class="view-btn view-btn--white">Read More</a>
+            <a href="#">
+              <span class="check-item__icon"><i class="fas fa-star"></i></span>
+              <h4 class="check-item__ttl">Amazing design </h4>
+              <p class="check-item__text"> Lorem ipsum dolor sit amet, consectetur adipisc ing elit. Aliquam viverra
+                dolor sit
+                consectetur nibh a blan dit nunc.</p>
+            </a>
+            <a href="#" class="view-btn view-btn--white"><span>View Projects</span></a>
           </li>
         </ul>
       </div>
@@ -101,96 +115,111 @@
     <section class="works">
       <div class="container">
         <h3 class="works__ttl">Our Latest <span>Works</span></h3>
-
-        <div class="works-items">
-          <div class="works-item">
-            <div class="works-item-overlay">
+      </div>
+      <div class="works-items">
+        <div class="works-item">
+          <div class="works-item-overlay">
+            <div class="works-item-overlay-text">
               <p class="works-item-overlay__ttl">Beatiful Mountain</p>
               <small class="works-item-overlay__text">Something more beautiful mountains photos.</small>
               <div class="works-item-overlay-btn">
-                <a href="#"></a><i class="fas fa-search"></i>
+                <a href="#"><i class="fas fa-search"></i></a>
                 <a href="#"><i class="fas fa-link"></i></a>
               </div>
             </div>
-            <img src="img/work-1.jpg" alt="work 1">
           </div>
-          <div class="works-item">
-            <div class="works-item-overlay">
+          <img src="img/work-1.jpg" alt="work 1">
+        </div>
+        <div class="works-item">
+          <div class="works-item-overlay">
+            <div class="works-item-overlay-text">
               <p class="works-item-overlay__ttl">Beatiful Mountain</p>
               <small class="works-item-overlay__text">Something more beautiful mountains photos.</small>
               <div class="works-item-overlay-btn">
-                <a href="#"></a><i class="fas fa-search"></i>
+                <a href="#"><i class="fas fa-search"></i></a>
                 <a href="#"><i class="fas fa-link"></i></a>
               </div>
             </div>
-            <img src="img/work-2.jpg" alt="work 2">
           </div>
-          <div class="works-item">
-            <div class="works-item-overlay">
+          <img src="img/work-2.jpg" alt="work 2">
+        </div>
+        <div class="works-item">
+          <div class="works-item-overlay">
+            <div class="works-item-overlay-text">
               <p class="works-item-overlay__ttl">Beatiful Mountain</p>
               <small class="works-item-overlay__text">Something more beautiful mountains photos.</small>
               <div class="works-item-overlay-btn">
-                <a href="#"></a><i class="fas fa-search"></i>
+                <a href="#"><i class="fas fa-search"></i></a>
                 <a href="#"><i class="fas fa-link"></i></a>
               </div>
             </div>
-            <img src="img/work-3.jpg" alt="work 3">
           </div>
-          <div class="works-item">
-            <div class="works-item-overlay">
+          <img src="img/work-3.jpg" alt="work 3">
+        </div>
+        <div class="works-item">
+          <div class="works-item-overlay">
+            <div class="works-item-overlay-text">
               <p class="works-item-overlay__ttl">Beatiful Mountain</p>
               <small class="works-item-overlay__text">Something more beautiful mountains photos.</small>
               <div class="works-item-overlay-btn">
-                <a href="#"></a><i class="fas fa-search"></i>
+                <a href="#"><i class="fas fa-search"></i></a>
                 <a href="#"><i class="fas fa-link"></i></a>
               </div>
             </div>
-            <img src="img/work-4.jpg" alt="work 4">
           </div>
-          <div class="works-item">
-            <div class="works-item-overlay">
+          <img src="img/work-4.jpg" alt="work 4">
+        </div>
+        <div class="works-item">
+          <div class="works-item-overlay">
+            <div class="works-item-overlay-text">
               <p class="works-item-overlay__ttl">Beatiful Mountain</p>
               <small class="works-item-overlay__text">Something more beautiful mountains photos.</small>
               <div class="works-item-overlay-btn">
-                <a href="#"></a><i class="fas fa-search"></i>
+                <a href="#"><i class="fas fa-search"></i></a>
                 <a href="#"><i class="fas fa-link"></i></a>
               </div>
             </div>
-            <img src="img/work-5.jpg" alt="work 5">
           </div>
-          <div class="works-item">
-            <div class="works-item-overlay">
+          <img src="img/work-5.jpg" alt="work 5">
+        </div>
+        <div class="works-item">
+          <div class="works-item-overlay">
+            <div class="works-item-overlay-text">
               <p class="works-item-overlay__ttl">Beatiful Mountain</p>
               <small class="works-item-overlay__text">Something more beautiful mountains photos.</small>
               <div class="works-item-overlay-btn">
-                <a href="#"></a><i class="fas fa-search"></i>
+                <a href="#"><i class="fas fa-search"></i></a>
                 <a href="#"><i class="fas fa-link"></i></a>
               </div>
             </div>
-            <img src="img/work-6.jpg" alt="work 6">
           </div>
-          <div class="works-item">
-            <div class="works-item-overlay">
+          <img src="img/work-6.jpg" alt="work 6">
+        </div>
+        <div class="works-item">
+          <div class="works-item-overlay">
+            <div class="works-item-overlay-text">
               <p class="works-item-overlay__ttl">Beatiful Mountain</p>
               <small class="works-item-overlay__text">Something more beautiful mountains photos.</small>
               <div class="works-item-overlay-btn">
-                <a href="#"></a><i class="fas fa-search"></i>
+                <a href="#"><i class="fas fa-search"></i></a>
                 <a href="#"><i class="fas fa-link"></i></a>
               </div>
             </div>
-            <img src="img/work-7.jpg" alt="work 7">
           </div>
-          <div class="works-item">
-            <div class="works-item-overlay">
+          <img src="img/work-7.jpg" alt="work 7">
+        </div>
+        <div class="works-item">
+          <div class="works-item-overlay">
+            <div class="works-item-overlay-text">
               <p class="works-item-overlay__ttl">Beatiful Mountain</p>
               <small class="works-item-overlay__text">Something more beautiful mountains photos.</small>
               <div class="works-item-overlay-btn">
-                <a href="#"></a><i class="fas fa-search"></i>
+                <a href="#"><i class="fas fa-search"></i></a>
                 <a href="#"><i class="fas fa-link"></i></a>
               </div>
             </div>
-            <img src="img/work-8.jpg" alt="work 8">
           </div>
+          <img src="img/work-8.jpg" alt="work 8">
         </div>
       </div>
     </section>
@@ -201,21 +230,21 @@
 
         <ul class="blog-author">
           <li class="blog-author-item">
-            <img src="img/work-1.jpg" alt="work 1" class="blog-author-item__img"><img src="img/person-1.png" alt="person 1"
+            <img src="img/work-3.jpg" alt="work 3" class="blog-author-item__img"><img src="img/person-1.png" alt="person 1"
               class="blog-author-item__avatar">
             <time>January 11, 2014</time>
             <p class="blog-author-item__text">Lorem ipsum dolor sit amet,
               consectetur adipiscing. Aliquam viverra dolor sit consectetur.</p>
           </li>
           <li class="blog-author-item">
-            <img src="img/work-2.jpg" alt="work 2" class="blog-author-item__img"><img src="img/person-2.png" alt="person 2"
+            <img src="img/work-4.jpg" alt="work 4" class="blog-author-item__img"><img src="img/person-2.png" alt="person 2"
               class="blog-author-item__avatar">
             <time>January 10, 2014</time>
             <p class="blog-author-item__text">Lorem ipsum dolor sit amet,
               consectetur adipiscing. </p>
           </li>
           <li class="blog-author-item">
-            <img src="img/work-3.jpg" alt="work 3" class="blog-author-item__img"><img src="img/person-3.png" alt="person 3"
+            <img src="img/work-5.jpg" alt="work 5" class="blog-author-item__img"><img src="img/person-3.png" alt="person 3"
               class="blog-author-item__avatar">
             <time>January 09, 2014</time>
             <p class="blog-author-item__text">Lorem ipsum dolor sit amet,
@@ -234,8 +263,10 @@
         <p class="callback__text">Lorem ipsum address line1, address line 2</p>
         <a href="tel:+0414 459 237" class="callback-phone">0414 459 237</a><a href="mailto:info@elegantbizz.com" class="callback-mail">info@elegantbizz.com</a>
 
-        <input name="name" type="text" class="callback__input">
-        <input name="surname" type="text" class="callback__input">
+        <div class="callback__input">
+          <input name="name" type="text" placeholder="Name">
+          <input name="surname" type="text" placeholder="Email">
+        </div>
         <textarea name="message" placeholder="Message"></textarea>
         <button class="callback-submit" type="submit">
           <object class="callback-submit__img" type="image/svg+xml" data="img/send.svg">
