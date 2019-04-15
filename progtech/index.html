@@ -138,10 +138,11 @@
         methods: {
           deleteUser(element) {
             confirm("Вы действительно хотите удалить участника?")
-              ? this.resultTable = this.resultTable.filter((item) => item.id == element)
+              ? this.resultTable.splice(element, 1)
               : null;
-              console.log("Done!");
-              
+            this.resultTable[0]
+              ? (this.userWinner = this.resultTable[0])
+              : (this.userWinner = {});
           },
           addUser() {
             this.user.rateMax = Math.max.apply(Math, [
