@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Определение победителя по прыжкам в воду</title>
+    <style>
+      .container {
+        margin: 0 auto;
+        max-width: 95%;
+      }
+
+      #main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .user-rate {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .user-rate__col {
+        width: 50px;
+      }
+
+      .user-rate__col select {
+        display: block;
+        width: 100%;
+      }
+
+      .user-rate__col:nth-child(2) {
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="container">
+        <div id="main" v-show="!showTable">
+          <div class="user">
+            <input
+              v-model="user.userName"
+              type="text"
+              class="user__name"
+              placeholder="Введите ФИО"
+            />
+            <h4 class="user-rate__ttl">Укажите результат</h4>
+            <div class="user-rate">
+              <div class="user-rate__col">
+                <select v-model="user.rate1">
+                  <option disabled value="">0</option>
+                  <option v-for="rate in rateVal" v-text="rate"></option>
+                </select>
+              </div>
+              <div class="user-rate__col">
+                <select v-model="user.rate2">
+                  <option disabled value="">0</option>
+                  <option v-for="rate in rateVal" v-text="rate"></option>
+                </select>
+              </div>
+              <div class="user-rate__col">
+                <select v-model="user.rate3">
+                  <option disabled value="">0</option>
+                  <option v-for="rate in rateVal" v-text="rate"></option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="btn">
+            <button @click="addUser" class="btn__add">
+              Добавить участника
+            </button>
+            <button class="btn__table" @click="toggleTable">
+              Показать результаты
+            </button>
+          </div>
+          <div v-show="resultTable.length != 0" class="show-last">
+            <h4>Текущий победитель:</h4>
+            {{ 1 + resultTable.indexOf(userWinner) }}.
+            {{ userWinner.userName }} / {{ userWinner.rate1 }} /
+            {{ userWinner.rate2 }} / {{ userWinner.rate3 }} /
+            <b>{{ userWinner.rateMax }}</b>
+          </div>
+        </div>
+        <div id="table" v-show="showTable">
+          <button @click="toggleTable">Вернуться</button>
+          <h2>Таблица результатов</h2>
+          <div class="chart"></div>
+          <div class="table">
+            <table>
+              <tr>
+                <th>Место в таблице</th>
+                <th>ФИО</th>
+                <th>Результат 1</th>
+                <th>Результат 2</th>
+                <th>Результат 3</th>
+                <th>Лучший результат</th>
+              </tr>
+              <tr v-for="(user, i) in resultTable">
+                <td>{{ i + 1 }}</td>
+                <td>{{ user.userName }}</td>
+                <td>{{ user.rate1 }}</td>
+                <td>{{ user.rate2 }}</td>
+                <td>{{ user.rate3 }}</td>
+                <td>{{ user.rateMax }}</td>
+                <td><button @click="deleteUser(i)">Удалить</button></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- https://vuejs.org/guide/deployment.html -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          showTable: false,
+          resultTable: [],
+          rateVal: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+          user: {
+            userName: "",
+            id: 0,
+            rate1: 0,
+            rate2: 0,
+            rate3: 0,
+            rateMax: 0
+          },
+          userWinner: {}
+        },
+        methods: {
+          deleteUser(element) {
+            confirm("Вы действительно хотите удалить участника?")
+              ? this.resultTable = this.resultTable.filter((item) => item.id == element)
+              : null;
+              console.log("Done!");
+              
+          },
+          addUser() {
+            this.user.rateMax = Math.max.apply(Math, [
+              this.user.rate1,
+              this.user.rate2,
+              this.user.rate3
+            ]);
+
+            this.user.id = this.resultTable.length - 1;
+
+            this.resultTable.push(this.user);
+
+            this.resultTable = this.resultTable.sort((a, b) =>
+              a.rateMax > b.rateMax ? -1 : 1
+            );
+
+            this.user = {
+              userName: "",
+              id: 0,
+              rate1: 0,
+              rate2: 0,
+              rate3: 0,
+              rateMax: 0
+            };
+
+            this.userWinner = this.resultTable[0];
+          },
+          toggleTable() {
+            this.showTable = !this.showTable;
+          }
+        },
+        computed: {
+          updateTable() {
+            return this.resultTable;
+          },
+          findWinner() {
+            return this.userWinner;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
