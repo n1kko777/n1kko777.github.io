@@ -12,6 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
     isEmailCorrect = false,
     isPhoneCorrect = false;
 
+  const onReset = () => {
+    form.reset();
+    isNameCorrect = false;
+    isEmailCorrect = false;
+    isPhoneCorrect = false;
+    name.style.borderColor = "";
+    email.style.borderColor = "";
+    phone.style.borderColor = "";
+  };
+
   const isValid = () => {
     btnForm.disabled = !(isNameCorrect && isEmailCorrect && isPhoneCorrect);
   };
@@ -83,12 +93,12 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("data :>> ", data);
 
         alert("Спасибо за заявку!");
-        form.reset();
+        onReset();
       });
     } catch (error) {
       console.log(error);
       alert("Сервер временно недоступен, попробуйте позже");
-      form.reset();
+      onReset();
     }
   };
 
