@@ -81,9 +81,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       response.then((data) => {
         console.log("data :>> ", data);
+
+        alert("Спасибо за заявку!");
+        form.reset();
       });
     } catch (error) {
       console.log(error);
+      alert("Сервер временно недоступен, попробуйте позже");
+      form.reset();
     }
   };
 
